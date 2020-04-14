@@ -7,7 +7,6 @@
 .top div{
 	float: left;
 }
-
 /* 顶部三个盒子 */
 .t_logo{
 	width:15%;
@@ -15,16 +14,13 @@
 }
 .t_menu{
 	height:100%;
-	width:70%;
+	width:75%;
 }
 .t_user{
-	width:15%;
+	width:10%;
 	height:100%;
 }
-
-
 /* LOGO设计 */
-
 .t_logo a {
 	padding:15px;
 }
@@ -46,35 +42,29 @@
 	 font-family:cursive;
 	 color:#B0C4DE;
 	 text-decoration:none;
-	 margin:5px;
-	 padding: 10px;
-	 
+	 margin:0px;
+	 padding: 6px;
 }
-
-.t_menu a:link{
-	 color:#B0C4DE;
-}
-.t_menu a:visited{
-	 color:#B0C4DE;
-}
+.t_menu a:link,
+.t_menu a:visited,
 .t_menu a:hover{
-	 color:#B0C4FF;
+	 color:#B0C4DE;
 }
-
 
 /* 登录模块设计 */
 .t_user div {
-	 align-content: center;
-	 padding:0px;
-	 margin: 0 auto;
+	align-content: center;
+	margin: 20px;
 }
-
 .t_user div a{
+	 align-content:center;
 	 font-size:30px;
+	 font-family:cursive;
 	 float: left;
 	 text-decoration:none;
 	 color:#D8BFD8;
-	 padding: 10px;
+	 margin:0px;
+	 padding: 6px;
 }
 
 

@@ -17,7 +17,7 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel panel-primary">
                     <div class="panel-body">
-                        <form action="check_reg.jsp" method="POST" name="registerForm">
+                        <form action="CheckRegister.jsp" method="POST" name="registerForm">
                             <div class="form-group">
                                 <label for="name">用户名</label> <input type="text"
                                     class="form-control" name="name" placeholder="请输入用户名"

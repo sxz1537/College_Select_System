@@ -9,25 +9,19 @@
 		 </div>
 		</div>
 		<div class="t_menu">
-		 <div>
-			
+		 <div>		
 			<a href="login.jsp">选专业 </a>
 			<a href="register.jsp">查学校</a>
 			<a href="register.jsp">查专业</a>
 			<a href="register.jsp">大学推荐</a>
 			<a href="register.jsp">大学排行榜</a>
-			<a href="register.jsp">专业排行榜</a>
-			
+			<a href="register.jsp">专业排行榜</a>			
 		 </div>
 		</div>	
 		<div class="t_user">
 		 <div>
-			<div>
-				<a href="login.jsp">登录 </a>
-			</div>
-			<div>
-			  <a href="register.jsp">注册</a>
-			</div>
+			<a href="login.jsp">登录</a>
+			<a href="register.jsp">注册</a>
 		 </div>
 		</div>	
 	

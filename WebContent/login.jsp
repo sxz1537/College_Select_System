@@ -20,7 +20,7 @@
 						<span class="glyphicon glyphicon-user"></span>登录
 					</div>
 					<div class="panel-body">
-						<form action="check_login.jsp" method="POST" name="loginForm">
+						<form action="CheckLogin.jsp" method="POST" name="loginForm">
 							<div class="form-group">
 								<label for="name">用户名</label> <input type="text"
 									class="form-control" name="name" placeholder="请输入用户名">
