@@ -10,14 +10,14 @@
 		</div>
 		<div class="t_menu">
 		 <div>
-			<ul>
-			<li><a href="login.jsp">选专业 </a></li>
-			<li><a href="register.jsp">查学校</a></li>
-			<li><a href="register.jsp">查专业</a></li>
-			<li><a href="register.jsp">大学推荐</a></li>
-			<li><a href="register.jsp">大学排行榜</a></li>
-			<li><a href="register.jsp">专业排行榜</a></li>
-			</ul>
+			
+			<a href="login.jsp">选专业 </a>
+			<a href="register.jsp">查学校</a>
+			<a href="register.jsp">查专业</a>
+			<a href="register.jsp">大学推荐</a>
+			<a href="register.jsp">大学排行榜</a>
+			<a href="register.jsp">专业排行榜</a>
+			
 		 </div>
 		</div>	
 		<div class="t_user">

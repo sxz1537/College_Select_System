@@ -37,38 +37,27 @@
 /* 导航菜单设计 */
 .t_menu div{
 	align-content: center;
+	margin: 20px;
 }
-.t_menu ul {
-	 align-content: center;
-  	 padding: 10px;
-	 list-style-type:none;
-}
-.t_menu ul li{
-	 padding-left:30px;
-	 align-content:center;
-	 margin:0px auto;
-	 display:inline-block;
-	 float：left;
-	 list-style:none;
-	 
-}
-.t_menu ul li a{
+
+.t_menu a{
 	 align-content:center;
 	 font-size:30px;
 	 font-family:cursive;
 	 color:#B0C4DE;
 	 text-decoration:none;
-	 margin:0px auto;
+	 margin:5px;
+	 padding: 10px;
 	 
 }
 
-.t_menu ul li a:link{
+.t_menu a:link{
 	 color:#B0C4DE;
 }
-.t_menu ul li a:visited{
+.t_menu a:visited{
 	 color:#B0C4DE;
 }
-.t_menu ul li a:hover{
+.t_menu a:hover{
 	 color:#B0C4FF;
 }
 
@@ -76,7 +65,7 @@
 /* 登录模块设计 */
 .t_user div {
 	 align-content: center;
-	 padding:10px;
+	 padding:0px;
 	 margin: 0 auto;
 }
 
@@ -85,6 +74,7 @@
 	 float: left;
 	 text-decoration:none;
 	 color:#D8BFD8;
+	 padding: 10px;
 }
 
 
