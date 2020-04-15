@@ -18,9 +18,8 @@
 	rs = ps.executeQuery();
 	if (rs.next()) {
 		session.setAttribute("loginuser", name);
-		response.sendRedirect("./login_success.jsp");
+		response.sendRedirect("login_success.jsp");
 	}else{
-		
-		response.sendRedirect("./login.jsp");
+		response.sendRedirect("login_failure.jsp");
 	}
 %>

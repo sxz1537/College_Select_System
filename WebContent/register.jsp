@@ -74,7 +74,6 @@
                 registerForm.repwd.focus();
                 return false;
             }
-            alert('注册成功！');
             return true;
         }
     </script>
