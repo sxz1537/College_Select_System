@@ -16,25 +16,25 @@
 	<div class="center">
 	<div>
     <div class="container">
-        <div class="row" style="margin-top: 30px">
+        <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel panel-primary">
                     <div class="panel-body">
                         <form action="CheckRegister.jsp" method="POST" name="registerForm">
                             <div class="form-group">
-                                <label for="name">用户名</label> <input type="text"
+                                <label for="name" style="margin-top: 5px;" >用户名</label> <input type="text"
                                     class="form-control" name="name" placeholder="请输入用户名"
                                     autofocus="autofocus">
                             </div>
                             <div class="form-group">
-                                <label for="">密码</label> <input type="password"
+                                <label for="" style="margin-top: 5px;">密码</label> <input type="password"
                                     class="form-control" name="pwd" placeholder="请输入密码">
                             </div>
                             <div class="form-group">
-                                <label for="">重复密码</label> <input type="password"
+                                <label for="" style="margin-top: 5px;">重复密码</label> <input type="password"
                                     class="form-control" name="repwd" placeholder="请重复密码">
                             </div>
-                            <button type="submit" class="btn btn-primary"
+                            <button type="submit" class="btn btn-primary" style="margin-top: 5px;"
                                 onclick="return checkForm()">注册</button>
                         </form>
                     </div>

@@ -13,7 +13,7 @@
 	String sqlCheck = "select * from user where name = '" + name + "'";
 	PreparedStatement pscheck=conn.prepareStatement(sqlCheck);
 	ResultSet rs=pscheck.executeQuery();
-	if(rs.next())
+	if(rs.next())   //先判断数据库内是否有重名用户
 	{
 		pscheck.close();
 		response.sendRedirect("reg_failure.jsp");//重定向到登陆页面	

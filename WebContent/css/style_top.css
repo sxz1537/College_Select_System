@@ -14,10 +14,10 @@
 }
 .t_menu{
 	height:100%;
-	width:70%;
+	width:73%;
 }
 .t_user{
-	width:15%;
+	width:12%;
 	height:100%;
 }
 /* LOGO设计 */
@@ -55,6 +55,7 @@
 .t_user div {
 	align-content: center;
 	margin: 20px;
+	padding-left: 20px;
 }
 .t_user div a{
 	 align-content:center;

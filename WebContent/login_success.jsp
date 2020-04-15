@@ -8,8 +8,9 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
-	<%
-	response.sendRedirect("index.jsp");//重定向到登陆页面
-	 %>
+登录成功,3s后进入主页
+<%
+	response.setHeader("refresh","3,URL=index.jsp");
+%>
 </body>
 </html>

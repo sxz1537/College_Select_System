@@ -15,9 +15,9 @@
 	String pwd = request.getParameter("pwd");
 	String sql = "SELECT *FROM user WHERE name ='" + name + "'AND pwd = '" + pwd + "'";
 	ps = conn.prepareStatement(sql);
-	rs = ps.executeQuery();
+	rs = ps.executeQuery();   //判断登录用户名是否有效
 	if (rs.next()) {
-		session.setAttribute("loginuser", name);
+		session.setAttribute("loginuser", name); //设置session
 		response.sendRedirect("login_success.jsp");
 	}else{
 		response.sendRedirect("login_failure.jsp");

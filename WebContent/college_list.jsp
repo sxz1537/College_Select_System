@@ -13,7 +13,11 @@
 	<jsp:include page="jsp_index/top.jsp"></jsp:include>
 	</div>
 	<div id="index_center">
-	大学排名
+		<% String username=(String)session.getAttribute("loginuser");
+		if(username==null){
+			%>请先登录,3s后进入登录页面
+			<% response.setHeader("refresh","3,URL=login.jsp");
+		}%>
 	</div>
 	<div id="index_footer">
 	<jsp:include page="jsp_index/footer.jsp"></jsp:include>
