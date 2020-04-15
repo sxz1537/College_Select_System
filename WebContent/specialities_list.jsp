@@ -13,7 +13,7 @@
 	<jsp:include page="jsp_index/top.jsp"></jsp:include>
 	</div>
 	<div id="index_center">
-	<jsp:include page="jsp_index/center.jsp"></jsp:include>
+	专业排名
 	</div>
 	<div id="index_footer">
 	<jsp:include page="jsp_index/footer.jsp"></jsp:include>

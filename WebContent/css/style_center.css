@@ -1,9 +1,13 @@
 
 .center {
 	background-image:url('../img/bg.jpg');
+	background-size:cover;
 	background-repeat:no-repeat;
 	height:900px;
-
+	margin: 0px auto;
+}
+.center div {
+	margin: 0px auto;
 }
 
 

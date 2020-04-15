@@ -7,11 +7,14 @@
 <title>注册</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/style_center.css">
 </head>
 <body>
 	<div id="index_top">
-	<jsp:include page="jsp/top.jsp"></jsp:include>
+	<jsp:include page="jsp_index/top.jsp"></jsp:include>
 	</div>
+	<div class="center">
+	<div>
     <div class="container">
         <div class="row" style="margin-top: 30px">
             <div class="col-md-4 col-md-offset-4">
@@ -39,12 +42,11 @@
             </div>
         </div>
     </div>
-    
+    </div>
+    </div>
     <div id="index_footer">
-	<jsp:include page="jsp/footer.jsp"></jsp:include>
+	<jsp:include page="jsp_index/footer.jsp"></jsp:include>
 	</div>
-    
-    
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"

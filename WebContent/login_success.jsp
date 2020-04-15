@@ -15,7 +15,7 @@
 					<div class="panel-body text-center">登录成功！</div>
 				</div>
 				<div>
-					<a href="index.jsp">返回首页</a>
+					<a href="index.jsp">回到首页</a>
 				</div>
 				
 			</div>

@@ -14,12 +14,12 @@ body{
 }
 #index_center{
 	width:100%;
-	height:80%;
+	height:100%;
 	clear: both;
 }
 #index_footer{
 	width:100%;
-	height:10%;
+	height:80px;
 	clear: both;
 	bottom: 0px;
 }
