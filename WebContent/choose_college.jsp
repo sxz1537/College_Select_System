@@ -51,7 +51,7 @@
   <tbody>
     <tr>
       <td><%=collf.getCollege_id()%></td>
-      <td><%=collf.getCollege_name() %></td>
+      <td><a href="college_details.jsp?college_id=<%=collf.getCollege_id()%>"><%=collf.getCollege_name() %></a></td>
       <td><%=collf.getCollege_grade() %></td>
       <td><%=collf.getCollege_location() %></td>
     </tr>
