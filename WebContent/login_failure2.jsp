@@ -17,7 +17,7 @@ p{
 </style>
 </head>
 <body>
-	<p>登录失败，请检查用户名密码</p>
+	<p>您当前未登陆，请先登录或者注册帐号</p>
 	<button type="button" class="btn btn-primary"><a href="login.jsp"></a>点击这里重新登录</button><br><br>
 	<button type="button" class="btn btn-primary"><a href="register.jsp"></a>点击这里注册账号</button><br><br>
 	<button type="button" class="btn btn-primary"><a href="index.jsp"></a>点击这里回到首页</button><br><br>
