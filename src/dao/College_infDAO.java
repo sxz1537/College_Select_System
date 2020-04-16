@@ -72,6 +72,7 @@ public class College_infDAO {
 				collinf.setCollege_name(rs.getString("college_name"));
 				collinf.setCollege_grade(rs.getInt("college_grade"));
 				collinf.setCollege_location(rs.getString("college_location"));
+				collinf.setCollege_desc(rs.getString("college_desc"));
 				return collinf;
 			} else {
 				return null;

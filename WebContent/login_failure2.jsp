@@ -18,9 +18,9 @@ p{
 </head>
 <body>
 	<p>您当前未登陆，请先登录或者注册帐号</p>
-	<button type="button" class="btn btn-primary"><a href="login.jsp"></a>点击这里重新登录</button><br><br>
-	<button type="button" class="btn btn-primary"><a href="register.jsp"></a>点击这里注册账号</button><br><br>
-	<button type="button" class="btn btn-primary"><a href="index.jsp"></a>点击这里回到首页</button><br><br>
+	<a class="btn btn-primary" href="login.jsp">点击这里重新登录</a><br>
+	<a class="btn btn-primary" href="register.jsp">点击这里注册账号</a><br>
+	<a class="btn btn-primary" href="index.jsp">点击这里回到首页</a>
 
 </body>
 </html>
