@@ -1,50 +1,41 @@
 <%@page import="dao.CollegeDAO"%>
+<%@page import="entity.College"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
-CollegeDAO dao=new CollegeDAO();
-String action=request.getParameter("action");
-   if("del".equals(action)){
-	   //是删除吗？
-	  int gid=Integer.parseInt(request.getParameter("gid"));
-	  dao.delCollege(gid);//
- 	  }else if("add".equals(action)||"upd".equals(action)){
-	%>
-	<jsp:useBean id="coll" class="entity.College"></jsp:useBean>
-	<jsp:setProperty property="*" name="coll"/>
-	
-	<% 
-	
-	String collName=coll.getCollege_name();
-	if(collName==null){
-		collName="";
-		}
-	coll.setCollege_name(new String(collName.getBytes("iso-8859-1") ,"utf-8"));
-	
-	coll.setCollege_grade(Integer.parseInt(request.getParameter("collGrade")));
-	
-	String collLocation=coll.getCollege_location();
-	if(collLocation==null){
-		collLocation="";
-	}
-	coll.setCollege_desc(
-			new String(collLocation.getBytes("iso-8859-1"),"utf-8")
-			);
-	
-	String collDesc=coll.getCollege_desc();
-	if(collDesc==null){
-		collDesc="";
-	}
-	coll.setCollege_desc(
-			new String(collDesc.getBytes("iso-8859-1"),"utf-8")
-			);
-	
-	if("add".equals(action)){
-		dao.addCollege(coll);
-	}else{
+	CollegeDAO dao = new CollegeDAO();
+	College coll=new College();
+	request.setCharacterEncoding("utf-8");
+	String action = request.getParameter("action");
+	if ("del".equals(action)) //是删除吗？
+	{
+		int gid = Integer.parseInt(request.getParameter("gid"));
+		dao.delCollege(gid);//
+	} 
+ 	else if ("upd".equals(action)) {
+		String cname=request.getParameter("cname");
+		int cgrade=Integer.parseInt(request.getParameter("cgrade"));
+		String clocation=request.getParameter("clocation");
+		String cdesc=request.getParameter("cdesc");
+		int gid = Integer.parseInt(request.getParameter("gid"));
+		coll.setCollege_name(cname);
+		coll.setCollege_grade(cgrade);
+		coll.setCollege_location(clocation);
+		coll.setCollege_desc(cdesc);
+		coll.setCollege_id(gid);
 		dao.updateCollege(coll);
+	}  
+	else if ("add".equals(action)){
+		String cname=request.getParameter("cname");
+		int cgrade=Integer.parseInt(request.getParameter("cgrade"));
+		String clocation=request.getParameter("clocation");
+		String cdesc=request.getParameter("cdesc");
+		coll.setCollege_name(cname);
+		coll.setCollege_grade(cgrade);
+		coll.setCollege_location(clocation);
+		coll.setCollege_desc(cdesc);
+		dao.addCollege(coll);
+		
 	}
-   
-   }
-    response.sendRedirect("collegelist.jsp"); 
+	response.sendRedirect("collegelist.jsp");
 %>

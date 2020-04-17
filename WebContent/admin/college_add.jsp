@@ -19,7 +19,7 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 </head>
 <body  style=background:url(../images/htp.jpg)> <%=htmlData%>
 <div class="goods_add">
-		<form name="example" action="college_doadd.jsp" method="post">
+		<form name="example" action="college_do.jsp?action=add" method="post">
 			<table class="table table-condensed"> 
 				<tr>
 					<td>学校名称</td>

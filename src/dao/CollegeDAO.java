@@ -10,8 +10,8 @@ import entity.College;
 import util.DBHelper;
 
 public class CollegeDAO {
-	// 获得大学信息
-	public ArrayList<College> getAllCollege() {
+	
+	public ArrayList<College> getAllCollege() { // 获得所有大学信息
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
