@@ -8,9 +8,9 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
-登录成功,3s后进入主页
+登录成功,1s后进入主页
 <%
-	response.setHeader("refresh","3,URL=index.jsp");
+	response.setHeader("refresh","1,URL=index.jsp");
 %>
 </body>
 </html>

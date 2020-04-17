@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-注册成功,3s后进入登录页面
+注册成功,1s后进入登录页面
 <%
-	response.setHeader("refresh","3,URL=login.jsp");
+	response.setHeader("refresh","1,URL=login.jsp");
 %>
 </body>
 </html>

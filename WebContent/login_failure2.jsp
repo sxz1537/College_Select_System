@@ -18,8 +18,8 @@ p{
 </head>
 <body>
 	<p>您当前未登陆，请先登录或者注册帐号</p>
-	<a class="btn btn-primary" href="login.jsp">点击这里重新登录</a><br>
-	<a class="btn btn-primary" href="register.jsp">点击这里注册账号</a><br>
+	<a class="btn btn-primary" href="login.jsp">点击这里重新登录</a><br><br>
+	<a class="btn btn-primary" href="register.jsp">点击这里注册账号</a><br><br>
 	<a class="btn btn-primary" href="index.jsp">点击这里回到首页</a>
 
 </body>

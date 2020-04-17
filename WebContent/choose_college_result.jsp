@@ -18,15 +18,9 @@
 	<div id="index_top">
 		<jsp:include page="jsp_index/top.jsp"></jsp:include>
 	</div>
-	<!-- 添加登录后才可以使用功能的限制 -->
-		<%-- <% String username=(String)session.getAttribute("loginuser");
-		if(username==null){
-			 response.sendRedirect("login_failure2.jsp");
-		}
-		%>  --%>
-
-		<div id="index_center">
+	<div id="index_center">
 		<div class="center">
+		
 		<div style="margin-left: 100px ;margin-right: 100px">
 			<table class="table table-striped" id="store">
 				<thead>
@@ -37,18 +31,16 @@
 						<th>省份</th>
 					</tr>
 				</thead>
-				<!-- 循环部分开始 -->
 				<%
 					College_infDAO colldao = new College_infDAO();
-					ArrayList<College_inf> list = colldao.getAllCollege_inf();
+					int grade=Integer.parseInt(request.getParameter("grade"));
+					String location=request.getParameter("location");
+					ArrayList<College_inf> list = colldao.getCollege_infByGrade(grade);
 					if (list != null && list.size() > 0) {
-
 						for (int i = 0; i < list.size(); i++) {
 
 							College_inf collf = list.get(i);
 				%>
-
-
 				<tbody>
 					<tr>
 						<td><%=collf.getCollege_id()%></td>
@@ -57,14 +49,25 @@
 						<td><%=collf.getCollege_location()%></td>
 					</tr>
 					<%
-						}
-						}
+						}	
+					}
+					else{
+						%>
+							没有符合条件的结果，请重新查询<a href="choose_college.jsp">点击这里返回</a>
+						<% 
+					}
 					%>
 				</tbody>
 			</table>
 
 	</div>
-	</div>
+
+
+
+
+
+
+		</div>
 	</div>
 	<div id="index_footer">
 		<jsp:include page="jsp_index/footer.jsp"></jsp:include>

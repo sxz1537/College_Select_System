@@ -103,6 +103,52 @@ public class College_infDAO {
 		}
 
 	}
+	//条件选取大学信息
+	public ArrayList<College_inf> getCollege_infByGrade(int college_grade) {
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		int grade=college_grade;
+
+		ArrayList<College_inf> list = new ArrayList<College_inf>(); // 大学集合
+		try {
+			conn = DBHelper.getConnection();
+			String sql = "select * from college_inf where college_grade <='"+grade+"'" ;  // sql语句
+			stmt = conn.prepareStatement(sql);
+			rs = stmt.executeQuery();
+			while (rs.next()) {
+				College_inf collinf = new College_inf();
+				collinf.setCollege_id(rs.getInt("college_id"));
+				collinf.setCollege_name(rs.getString("college_name"));
+				collinf.setCollege_grade(rs.getInt("college_grade"));
+				collinf.setCollege_location(rs.getString("college_location"));
+				list.add(collinf); // 把大学信息加入集合
+			}
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			// 释放数据集对象
+			if (rs != null) {
+				try {
+					rs.close();
+					rs = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			// 释放语句对象
+			if (stmt != null) {
+				try {
+					stmt.close();
+					stmt = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
 
 	
 	/*

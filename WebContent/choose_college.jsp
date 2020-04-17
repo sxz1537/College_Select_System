@@ -18,53 +18,35 @@
 	<div id="index_top">
 		<jsp:include page="jsp_index/top.jsp"></jsp:include>
 	</div>
-	<!-- 添加登录后才可以使用功能的限制 -->
-		<% String username=(String)session.getAttribute("loginuser");
-		if(username==null){
-			 response.sendRedirect("login_failure2.jsp");
-		}
-		%> 
-
-
 	<div id="index_center">
 		<div class="center">
-		<div style="margin-left: 100px ;margin-right: 100px">
-			<table class="table table-striped" id="store">
-				<thead>
-					<tr>
-						<th>大学ID</th>
-						<th>名称</th>
-						<th>录取分数线</th>
-						<th>省份</th>
-					</tr>
-				</thead>
-				<!-- 循环部分开始 -->
-				<%
-					College_infDAO colldao = new College_infDAO();
-					ArrayList<College_inf> list = colldao.getAllCollege_inf();
-					if (list != null && list.size() > 0) {
+		
+	<div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <form action="choose_college_result.jsp" method="POST" name="sesectForm">
+                            <div class="form-group">
+                                <label for="grade" style="margin-top: 5px;" >成绩</label> <input type="text"
+                                    class="form-control" name="grade" placeholder="请输入成绩"
+                                    autofocus="autofocus">
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="location" style="margin-top: 5px;">目标省份</label> <input type="text"
+                                    class="form-control" name="location" placeholder="省份">
+                            </div> -->
+                           
+                            <button type="submit" class="btn btn-primary" style="margin-top: 5px;">查询</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>	
 
-						for (int i = 0; i < list.size(); i++) {
-
-							College_inf collf = list.get(i);
-				%>
 
 
-				<tbody>
-					<tr>
-						<td><%=collf.getCollege_id()%></td>
-						<td><a href="college_details.jsp?college_id=<%=collf.getCollege_id()%>"><%=collf.getCollege_name()%></a></td>
-						<td><%=collf.getCollege_grade()%></td>
-						<td><%=collf.getCollege_location()%></td>
-					</tr>
-					<%
-						}
-						}
-					%>
-				</tbody>
-			</table>
-
-	</div>
 
 		</div>
 	</div>

@@ -5,7 +5,7 @@
 <div class="top">
 		<div class="t_logo">
 		 <div>
-			<a href="index.jsp"><img src="img/logo.jpg" alt="logo"></a>
+			<a href="index.jsp"><img src="${pageContext.request.contextPath}/img/logo.jpg" alt="logo"></a>
 		 </div>
 		</div>
 		<div class="t_menu">
