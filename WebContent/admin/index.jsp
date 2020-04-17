@@ -19,7 +19,7 @@
         <div class="span2">
             <ul class="nav nav-pills nav-stacked">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Tutorials</a></li>
+                <li><a href="collegelist.jsp">学校管理</a></li>
                 <li><a href="#">Practice Editor </a></li>
                 <li><a href="#">Gallery</a></li>
                 <li><a href="#">Contact</a></li>

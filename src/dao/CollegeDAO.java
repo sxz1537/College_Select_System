@@ -11,14 +11,14 @@ import util.DBHelper;
 
 public class CollegeDAO {
 	// 获得大学信息
-	public ArrayList<College> getAllCollege_inf() {
+	public ArrayList<College> getAllCollege() {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		ArrayList<College> list = new ArrayList<College>(); // 大学集合
 		try {
 			conn = DBHelper.getConnection();
-			String sql = "select * from college_inf;"; // sql语句
+			String sql = "select * from college;"; // sql语句
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while (rs.next()) {
@@ -62,7 +62,7 @@ public class CollegeDAO {
 		ResultSet rs = null;
 		try {
 			conn = DBHelper.getConnection();
-			String sql = "select * from college_inf where college_id=?;"; // sql语句
+			String sql = "select * from college where college_id=?;"; // sql语句
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, college_id);
 			rs = ps.executeQuery();
@@ -105,7 +105,7 @@ public class CollegeDAO {
 	}
 
 	// 条件选取大学信息
-	public ArrayList<College> getCollege_infByGrade(int college_grade) {
+	public ArrayList<College> getCollegeByGrade(int college_grade) {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -114,7 +114,7 @@ public class CollegeDAO {
 		ArrayList<College> list = new ArrayList<College>(); // 大学集合
 		try {
 			conn = DBHelper.getConnection();
-			String sql = "select * from college_inf where college_grade <='" + grade + "'"; // sql语句
+			String sql = "select * from college where college_grade <='" + grade + "'"; // sql语句
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while (rs.next()) {
@@ -155,7 +155,7 @@ public class CollegeDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "INSERT INTO college_inf ( `college_name`, `college_grade`, `college_location`, `college_desc`) VALUES (?,?,?,?);"; // sql语句
+		String sql = "INSERT INTO college ( `college_name`, `college_grade`, `college_location`, `college_desc`) VALUES (?,?,?,?);"; // sql语句
 		try {
 			conn = DBHelper.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -195,7 +195,7 @@ public class CollegeDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "update college_inf set college_name=?,college_grade=?,college_location=?,college_desc=? where college_id=?;"; // sql语句
+		String sql = "update college set college_name=?,college_grade=?,college_location=?,college_desc=? where college_id=?;"; // sql语句
 		try {
 			conn = DBHelper.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -238,7 +238,7 @@ public class CollegeDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "delete from college_inf where college_id=?;"; // sql语句
+		String sql = "delete from college where college_id=?;"; // sql语句
 		try {
 			conn = DBHelper.getConnection();
 			ps = conn.prepareStatement(sql);

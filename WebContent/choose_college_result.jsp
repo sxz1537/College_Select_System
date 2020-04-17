@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="entity.College_inf"%>
+<%@ page import="entity.College"%>
 <%@ page import="dao.CollegeDAO"%>
 <%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
@@ -35,11 +35,11 @@
 					CollegeDAO colldao = new CollegeDAO();
 					int grade=Integer.parseInt(request.getParameter("grade"));
 					String location=request.getParameter("location");
-					ArrayList<College_inf> list = colldao.getCollege_infByGrade(grade);
+					ArrayList<College> list = colldao.getCollegeByGrade(grade);
 					if (list != null && list.size() > 0) {
 						for (int i = 0; i < list.size(); i++) {
 
-							College_inf collf = list.get(i);
+							College collf = list.get(i);
 				%>
 				<tbody>
 					<tr>

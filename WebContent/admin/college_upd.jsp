@@ -19,24 +19,24 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 </head>
 <body  style=background:url(../images/htp.jpg)> <%=htmlData%>
 <div class="goods_add">
-		<form name="example" action="college_doadd.jsp" method="post">
+		<form name="example" action="college_do.jsp?action=add" method="post">
 			<table class="table table-condensed"> 
 				<tr>
 					<td>学校名称</td>
-					<td><input class="form-control" style="width:400px;" type="text" name="cname" ></td>
+					<td><input class="form-control" style="width:400px;" type="text" name="collName" ></td>
 				</tr>
 				<tr>
 					<td>学校分数</td>
-					<td><input class="form-control" style="width:400px;" type="text" name="cgrade" ></td>
+					<td><input class="form-control" style="width:400px;" type="text" name="collGrade" ></td>
 				</tr>
 				<tr>
 					<td>学校省份</td>
-					<td><input class="form-control" style="width:400px;" type="text" name="clocation"  ></td>
+					<td><input class="form-control" style="width:400px;" type="text" name="collLocation"  ></td>
 				</tr>
 				<tr>
 					<td>学校描述</td>
 					<td>
-					<td><input class="form-control" style="width:400px;" type="text" name="cdesc"  ></td>
+					<td><input class="form-control" style="width:400px;" type="text" name="collDesc"  ></td>
 				</tr>
 				
 				<tr>

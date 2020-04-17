@@ -2,7 +2,7 @@
 <%@page import="dao.EssayDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="entity.College_inf"%>
+<%@ page import="entity.College"%>
 <%@ page import="dao.CollegeDAO"%>
 <%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>

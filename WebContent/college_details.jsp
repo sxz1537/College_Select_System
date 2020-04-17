@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="entity.College_inf"%>
+<%@ page import="entity.College"%>
 <%@ page import="dao.CollegeDAO" %>
 <%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
@@ -33,7 +33,7 @@
 				
 				<%
 					CollegeDAO colldao = new CollegeDAO();
-					College_inf collfullinf = colldao.getFullInfById(Integer.parseInt(request.getParameter("college_id")));
+					College collfullinf = colldao.getFullInfById(Integer.parseInt(request.getParameter("college_id")));
 					if (collfullinf != null) {
 				%>
 				<tbody>
