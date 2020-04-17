@@ -19,6 +19,7 @@
 		<div class="center">
 		<div style="margin-left: 100px ;margin-right: 100px">
 		<button class="btn btn-link"><a href="college_add.jsp">添加</a></button>
+		<button class="btn btn-link"><a href="index.jsp">返回</a></button>
 			<table class="table table-striped" id="store">
 				<thead>
 					<tr>
@@ -37,12 +38,12 @@
 					if (list != null && list.size() > 0) {
 
 						for (int i = 0; i < list.size(); i++) {
-
+							int k=i+1;
 							College collf = list.get(i);
 				%>
 				<tbody>
 					<tr>
-						<td><%=collf.getCollege_id()%></td>
+						<td><%=k%></td>
 						<td><%=collf.getCollege_name()%></td>
 						<td><%=collf.getCollege_grade()%></td>
 						<td><%=collf.getCollege_location()%></td>

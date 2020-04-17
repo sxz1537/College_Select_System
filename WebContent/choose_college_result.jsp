@@ -38,12 +38,12 @@
 					ArrayList<College> list = colldao.getCollegeByGrade(grade);
 					if (list != null && list.size() > 0) {
 						for (int i = 0; i < list.size(); i++) {
-
+							int k=i+1;
 							College collf = list.get(i);
 				%>
 				<tbody>
 					<tr>
-						<td><%=collf.getCollege_id()%></td>
+						<td><%=k%></td>
 						<td><a href="college_details.jsp?college_id=<%=collf.getCollege_id()%>"><%=collf.getCollege_name()%></a></td>
 						<td><%=collf.getCollege_grade()%></td>
 						<td><%=collf.getCollege_location()%></td>

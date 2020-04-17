@@ -40,7 +40,6 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 				</tr>
 				<tr>
 					<td>学校描述</td>
-					<td>
 					<td><input class="form-control" style="width:400px;" type="text" name="cdesc"  ></td>
 				</tr>
 				

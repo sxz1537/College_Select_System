@@ -24,6 +24,7 @@
 		<div class="center">
 		<div style="margin-left: 100px ;margin-right: 100px">
 		<button class="btn btn-link"><a href="essay_add.jsp">添加</a></button>
+		<button class="btn btn-link"><a href="index.jsp">返回</a></button>
 			<table class="table table-striped" id="store">
 				<thead>
 					<tr>
@@ -41,12 +42,12 @@
 				if (list != null && list.size() > 0) {
 
 					for (int i = 0; i < list.size(); i++) {
-
+						int k=i+1;
 						Essay es = list.get(i);
 				%>
 				<tbody>
 					<tr>
-						<td><%=es.getEssay_id()%></td>
+						<td><%=k%></td>
 						<td><%=es.getEssay_title()%></td>
 						<td><a href="<%=es.getEssay_link()%>" target="_blank">点击跳转</a></td>
 						<td class="btn btn-link"><a href="essay_do.jsp?action=del&gid=<%=es.getEssay_id()%>">删除</a></td>

@@ -41,14 +41,14 @@
 					if (list != null && list.size() > 0) {
 
 						for (int i = 0; i < list.size(); i++) {
-
+							int k=i+1;
 							Essay es = list.get(i);
 				%>
 
 
 				<tbody>
 					<tr>
-						<td><%=es.getEssay_id()%></td>
+						<td><%=k%></td>
 						<td><%=es.getEssay_title()%></td>
 						<td><a href="<%=es.getEssay_link()%>" target="_blank">点击跳转</a></td>
 					</tr>

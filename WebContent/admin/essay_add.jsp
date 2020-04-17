@@ -24,7 +24,7 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 			<% response.setHeader("refresh","3,URL=login.jsp");
 		}%>
 <div >
-		<form name="example" action="essay_do.jsp?action=add" method="post">
+		<form name="addForm" action="essay_do.jsp?action=add" method="post">
 			<table class="table table-condensed"> 
 				<tr>
 					<td>文章标题</td>
@@ -39,7 +39,7 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 				<tr>
 					<td></td>
 					<td>
-					<input class="btn btn-default"	 type="submit" 		value="添加">
+					<button class="btn btn-default"	 type="submit" 		onclick="return checkForm()" >添加</button>
 					<input class="btn btn-default" 	 type="reset" 		value="重置">
 					<input class="btn btn-default"	 type="button"		onclick="javascript:window.location.href='essaylist.jsp';" value="返回" />
 					</td>
@@ -51,6 +51,26 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 		</form>
 
 	</div>
+	
+	<script type="text/javascript">
+        function checkForm() {
+            var title = addForm.etitle.value;
+            var link = addForm.elink.value;
+            if (title == "" || title == null) {
+                alert("请输入标题");
+                addForm.title.focus();
+                return false;
+            } else if (link == "" || link == null) {
+                alert("请输入链接");
+                addForm.link.focus();
+                return false;
+            } 
+            return true;
+        }
+    </script>
+	
+	
+	
 </body>
 </html>
 

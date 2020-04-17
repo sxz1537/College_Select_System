@@ -23,7 +23,6 @@
 			<table id="table" class="table table-striped" style="table-layout: fixed;word-break:break-all;" >
 				<thead>
 					<tr>
-						<th>大学ID</th>
 						<th>名称</th>
 						<th>录取分数线</th>
 						<th>省份</th>
@@ -38,7 +37,6 @@
 				%>
 				<tbody>
 					<tr>
-						<td><%=collfullinf.getCollege_id()%></td>
 						<td><%=collfullinf.getCollege_name()%></td>
 						<td><%=collfullinf.getCollege_grade()%></td>
 						<td><%=collfullinf.getCollege_location()%></td>
