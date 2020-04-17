@@ -10,13 +10,13 @@
 <body>
 <div id="index_full">
 	<div id="index_top">
-	<jsp:include page="jsp_index/top.jsp"></jsp:include>
+	<jsp:include page="top.jsp"></jsp:include>
 	</div>
 	<div id="index_center">
-	<jsp:include page="jsp_index/center.jsp"></jsp:include>
+	<jsp:include page="center.jsp"></jsp:include>
 	</div>
 	<div id="index_footer">
-	<jsp:include page="jsp_index/footer.jsp"></jsp:include>
+	<jsp:include page="footer.jsp"></jsp:include>
 	</div>
 </div>
 </body>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="entity.College_inf"%>
-<%@ page import="dao.College_infDAO"%>
+<%@ page import="dao.CollegeDAO"%>
 <%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div id="index_top">
-		<jsp:include page="jsp_index/top.jsp"></jsp:include>
+		<jsp:include page="top.jsp"></jsp:include>
 	</div>
 	<div id="index_center">
 		<div class="center">
@@ -32,7 +32,7 @@
 					</tr>
 				</thead>
 				<%
-					College_infDAO colldao = new College_infDAO();
+					CollegeDAO colldao = new CollegeDAO();
 					int grade=Integer.parseInt(request.getParameter("grade"));
 					String location=request.getParameter("location");
 					ArrayList<College_inf> list = colldao.getCollege_infByGrade(grade);
@@ -70,7 +70,7 @@
 		</div>
 	</div>
 	<div id="index_footer">
-		<jsp:include page="jsp_index/footer.jsp"></jsp:include>
+		<jsp:include page="footer.jsp"></jsp:include>
 	</div>
 
 </body>

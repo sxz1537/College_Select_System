@@ -8,15 +8,15 @@ import util.DBHelper;
 public class UserDAO { 
 	public boolean CheckUser(String Uname,String Upwd) {  //判断登录
 		Connection conn = null;
-		PreparedStatement stmt = null;
+		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
 			conn = DBHelper.getConnection();
 			String name=Uname;
 			String pwd=Upwd;
 			String sql = "SELECT * FROM user WHERE name ='" + name + "'AND pwd = '" + pwd + "'";
-			stmt = conn.prepareStatement(sql);
-			rs = stmt.executeQuery();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
 			if (rs.next()) {
 				return true;
 			}else{
@@ -36,10 +36,10 @@ public class UserDAO {
 				}
 			}
 			// 释放语句对象
-			if (stmt != null) {
+			if (ps != null) {
 				try {
-					stmt.close();
-					stmt = null;
+					ps.close();
+					ps = null;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -48,7 +48,7 @@ public class UserDAO {
 	}
 	public boolean UserReg(String Uname,String Upwd) {  //用户注册
 		Connection conn = null;
-		PreparedStatement stmt = null;
+		PreparedStatement ps = null;
 		PreparedStatement pscheck = null;
 		ResultSet rs = null;
 		try {
@@ -64,10 +64,10 @@ public class UserDAO {
 			}
 			else {
 				String sql = "INSERT user(name,pwd) VALUES(?,?)"; //插入数据进行注册
-				stmt = conn.prepareStatement(sql);
-				stmt.setString(1, name);
-				stmt.setString(2, pwd);
-				stmt.executeUpdate();
+				ps = conn.prepareStatement(sql);
+				ps.setString(1, name);
+				ps.setString(2, pwd);
+				ps.executeUpdate();
 				return true;
 			}
 			
@@ -85,10 +85,10 @@ public class UserDAO {
 				}
 			}
 			// 释放语句对象
-			if (stmt != null) {
+			if (ps != null) {
 				try {
-					stmt.close();
-					stmt = null;
+					ps.close();
+					ps = null;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

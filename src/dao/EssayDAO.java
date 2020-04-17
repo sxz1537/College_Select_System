@@ -13,14 +13,14 @@ public class EssayDAO {
 	// 获得文章信息
 	public ArrayList<Essay> getAllEssay() {
 		Connection conn = null;
-		PreparedStatement stmt = null;
+		PreparedStatement ps = null;
 		ResultSet rs = null;
 		ArrayList<Essay> list = new ArrayList<Essay>(); // 大学集合
 		try {
 			conn = DBHelper.getConnection();
 			String sql = "select * from essay;"; // sql语句
-			stmt = conn.prepareStatement(sql);
-			rs = stmt.executeQuery();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
 			while (rs.next()) {
 				Essay e = new Essay();
 				e.setEssay_id(rs.getInt("essay_id"));
@@ -43,10 +43,10 @@ public class EssayDAO {
 				}
 			}
 			// 释放语句对象
-			if (stmt != null) {
+			if (ps != null) {
 				try {
-					stmt.close();
-					stmt = null;
+					ps.close();
+					ps = null;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

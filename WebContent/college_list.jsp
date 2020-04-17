@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="entity.College_inf"%>
-<%@ page import="dao.College_infDAO"%>
+<%@ page import="dao.CollegeDAO"%>
 <%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div id="index_top">
-		<jsp:include page="jsp_index/top.jsp"></jsp:include>
+		<jsp:include page="top.jsp"></jsp:include>
 	</div>
 	<!-- 添加登录后才可以使用功能的限制 -->
 		<%-- <% String username=(String)session.getAttribute("loginuser");
@@ -39,7 +39,7 @@
 				</thead>
 				<!-- 循环部分开始 -->
 				<%
-					College_infDAO colldao = new College_infDAO();
+					CollegeDAO colldao = new CollegeDAO();
 					ArrayList<College_inf> list = colldao.getAllCollege_inf();
 					if (list != null && list.size() > 0) {
 
@@ -67,7 +67,7 @@
 	</div>
 	</div>
 	<div id="index_footer">
-		<jsp:include page="jsp_index/footer.jsp"></jsp:include>
+		<jsp:include page="footer.jsp"></jsp:include>
 	</div>
 
 </body>

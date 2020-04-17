@@ -1,12 +1,12 @@
 package entity;
 
 //大学信息类
-public class College_inf {
+public class College {
 	private int college_id; // id
 	private String college_name; // 学校名
 	private int college_grade; // 录取分数线
 	private String college_location; // 省份
-	private String college_desc; // 省份
+	private String college_desc; // 详细描述
 
 	public int getCollege_id() {
 		return college_id;

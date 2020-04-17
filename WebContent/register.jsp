@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="index_top">
-	<jsp:include page="jsp_index/top.jsp"></jsp:include>
+	<jsp:include page="top.jsp"></jsp:include>
 	</div>
 	<div class="center">
 	<div>
@@ -45,7 +45,7 @@
     </div>
     </div>
     <div id="index_footer">
-	<jsp:include page="jsp_index/footer.jsp"></jsp:include>
+	<jsp:include page="footer.jsp"></jsp:include>
 	</div>
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
