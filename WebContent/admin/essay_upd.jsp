@@ -1,3 +1,5 @@
+<%@page import="dao.EssayDAO"%>
+<%@page import="entity.Essay"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     import="java.util.*"%>
@@ -17,48 +19,47 @@ String htmlData = request.getParameter("description") != null ? request.getParam
   <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body > 
-<% String adminuser=(String)session.getAttribute("adminuser");
+<body >
+		<% String adminuser=(String)session.getAttribute("adminuser");
 		if(adminuser==null){
 			%>请先登录,3s后进入登录页面
 			<% response.setHeader("refresh","3,URL=login.jsp");
 		}%>
-<div >
-		<form name="example" action="college_do.jsp?action=add" method="post">
+	<%
+		Essay e=new Essay();
+		EssayDAO eDao = new EssayDAO();
+		int id=Integer.parseInt(request.getParameter("gid"));
+		e.setEssay_id(eDao.geteEssayById(id).getEssay_id());
+		e.setEssay_title(eDao.geteEssayById(id).getEssay_title());
+		e.setEssay_link(eDao.geteEssayById(id).getEssay_link());
+
+	%>
+		<form name="example" action="essay_do.jsp?action=upd&gid=<%=e.getEssay_id() %>" method="post">
 			<table class="table table-condensed"> 
 				<tr>
-					<td>学校名称</td>
-					<td><input class="form-control" style="width:400px;" type="text" name="cname" ></td>
+					<td>文章标题</td>
+					<td><input class="form-control" style="width:400px;" type="text" name="etitle" value="<%=e.getEssay_title() %>" ></td>
 				</tr>
 				<tr>
-					<td>学校分数</td>
-					<td><input class="form-control" style="width:400px;" type="text" name="cgrade" ></td>
+					<td>文章链接</td>
+					<td><input class="form-control" style="width:400px;" type="text" name="elink" value="<%=e.getEssay_link()%>" ></td>
 				</tr>
-				<tr>
-					<td>学校省份</td>
-					<td><input class="form-control" style="width:400px;" type="text" name="clocation"  ></td>
-				</tr>
-				<tr>
-					<td>学校描述</td>
-					<td>
-					<td><input class="form-control" style="width:400px;" type="text" name="cdesc"  ></td>
-				</tr>
+
+
 				
 				<tr>
 					<td></td>
 					<td>
-					<input class="btn btn-default"	 type="submit" 		value="添加">
+					<input class="btn btn-default"	 type="submit" 		value="修改">
 					<input class="btn btn-default" 	 type="reset" 		value="重置">
-					<input class="btn btn-default"	 type="button"		onclick="javascript:window.location.href='collegelist.jsp';" value="返回" />
+					<input class="btn btn-default"	 type="button"		onclick="javascript:window.location.href='essaylist.jsp';" value="返回" />
 					</td>
 				</tr>
 
 			</table>
-
-
 		</form>
 
-	</div>
+
 </body>
 </html>
 

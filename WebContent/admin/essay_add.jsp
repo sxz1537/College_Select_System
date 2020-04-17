@@ -24,32 +24,24 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 			<% response.setHeader("refresh","3,URL=login.jsp");
 		}%>
 <div >
-		<form name="example" action="college_do.jsp?action=add" method="post">
+		<form name="example" action="essay_do.jsp?action=add" method="post">
 			<table class="table table-condensed"> 
 				<tr>
-					<td>学校名称</td>
-					<td><input class="form-control" style="width:400px;" type="text" name="cname" ></td>
+					<td>文章标题</td>
+					<td><input class="form-control" style="width:400px;" type="text" name="etitle" ></td>
 				</tr>
 				<tr>
-					<td>学校分数</td>
-					<td><input class="form-control" style="width:400px;" type="text" name="cgrade" ></td>
+					<td>文章链接</td>
+					<td><input class="form-control" style="width:400px;" type="text" name="elink" ></td>
 				</tr>
-				<tr>
-					<td>学校省份</td>
-					<td><input class="form-control" style="width:400px;" type="text" name="clocation"  ></td>
-				</tr>
-				<tr>
-					<td>学校描述</td>
-					<td>
-					<td><input class="form-control" style="width:400px;" type="text" name="cdesc"  ></td>
-				</tr>
+				
 				
 				<tr>
 					<td></td>
 					<td>
 					<input class="btn btn-default"	 type="submit" 		value="添加">
 					<input class="btn btn-default" 	 type="reset" 		value="重置">
-					<input class="btn btn-default"	 type="button"		onclick="javascript:window.location.href='collegelist.jsp';" value="返回" />
+					<input class="btn btn-default"	 type="button"		onclick="javascript:window.location.href='essaylist.jsp';" value="返回" />
 					</td>
 				</tr>
 

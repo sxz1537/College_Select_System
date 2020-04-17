@@ -20,6 +20,11 @@ String htmlData = request.getParameter("description") != null ? request.getParam
   <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body >
+		<% String adminuser=(String)session.getAttribute("adminuser");
+		if(adminuser==null){
+			%>请先登录,3s后进入登录页面
+			<% response.setHeader("refresh","3,URL=login.jsp");
+		}%>
 	<%
 		College coll=new College();
 		CollegeDAO cDao = new CollegeDAO();
