@@ -26,7 +26,7 @@
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="collegelist.jsp">学校管理</a></li>
                 <li><a href="essaylist.jsp">文章管理 </a></li>
-                <li><a href="#">Gallery</a></li>
+                <li><a href="userlist.jsp">用户管理</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
