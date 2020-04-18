@@ -9,9 +9,7 @@
 	request.setCharacterEncoding("UTF-8");
 	String htmlData = request.getParameter("description") != null ? request.getParameter("description") : "";
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd 
-
-">
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -43,98 +41,96 @@
 		coll.setCollege_desc(cDao.getFullInfById(id).getCollege_desc());
 		coll.setCollege_location(cDao.getFullInfById(id).getCollege_location());
 	%>
-	<form name="example"
-		action="college_do.jsp?action=upd&gid=<%=coll.getCollege_id()%>"
-		method="post">
-		<table class="table table-condensed">
-			<tr>
-				<td>学校名称</td>
-				<td><input class="form-control" style="width: 400px;"
-					type="text" name="cname" value="<%=coll.getCollege_name()%>"></td>
-			</tr>
-			<tr>
-				<td>学校分数</td>
-				<td><input class="form-control" style="width: 400px;"
-					type="text" name="cgrade" value="<%=coll.getCollege_grade()%>"></td>
-			</tr>
-			<tr>
-				<td>学校省份</td>
-				<td><input class="form-control" style="width: 400px;"
-					type="text" name="clocation"
-					value="<%=coll.getCollege_location()%>"></td>
-			</tr>
-			<tr>
-				<td>学校描述</td>
-				<td><input class="form-control" style="width: 400px;"
-					type="text" name="cdesc" value="<%=coll.getCollege_desc()%>"></td>
-			</tr>
+	<div><jsp:include page="index.jsp"></jsp:include></div>
+	<div style="margin-left: 250px;">
+		<form name="example"
+			action="college_do.jsp?action=upd&gid=<%=coll.getCollege_id()%>"
+			method="post">
+			<table class="table table-condensed">
+			<thead>
+					<tr>
+						<th>更新大学信息</th>
+					</tr>
+				</thead>
+				<tr>
+					<td>学校名称</td>
+					<td><input class="form-control" style="width: 400px;"
+						type="text" name="cname" value="<%=coll.getCollege_name()%>"></td>
+				</tr>
+				<tr>
+					<td>学校分数</td>
+					<td><input class="form-control" style="width: 400px;"
+						type="text" name="cgrade" value="<%=coll.getCollege_grade()%>"></td>
+				</tr>
+				<tr>
+					<td>学校省份</td>
+					<td><input class="form-control" style="width: 400px;"
+						type="text" name="clocation"
+						value="<%=coll.getCollege_location()%>"></td>
+				</tr>
+				<tr>
+					<td>学校描述</td>
+					<td><input class="form-control" style="width: 400px;"
+						type="text" name="cdesc" value="<%=coll.getCollege_desc()%>"></td>
+				</tr>
 
-			<tr>
-				<td></td>
-				<td><input class="btn btn-default" type="submit" value="修改">
-					<input class="btn btn-default" type="reset" value="重置"> <input
-					class="btn btn-default" type="button"
-					onclick="javascript:window.location.href='collegelist.jsp';"
-					value="返回" /></td>
-			</tr>
+				<tr>
+					<td></td>
+					<td><input class="btn btn-default" type="submit" value="修改">
+						<input class="btn btn-default" type="reset" value="重置"> <input
+						class="btn btn-default" type="button"
+						onclick="javascript:window.location.href='collegelist.jsp';"
+						value="返回" /></td>
+				</tr>
 
-		</table>
-	</form>
+			</table>
+		</form>
+	<p>更新专业信息</p>
+		<%
+			MajorDAO md = new MajorDAO();
+			ArrayList<Major> list = md.getAllMajorByCollegeName(coll.getCollege_name());
+			if (list != null && list.size() > 0) {
+				for (int i = 0; i < list.size(); i++) {
+					Major ml = list.get(i);
+		%>
+		<form name="example1"
+			action="college_do.jsp?action=delmajor&cname=<%=coll.getCollege_name()%>&mname=<%=ml.getMajor_name()%>"
+			method="post">
+			<table class="table table-striped">
 
-	<%
-		MajorDAO md = new MajorDAO();
-		ArrayList<Major> list = md.getAllMajorByCollegeName(coll.getCollege_name());
-		if (list != null && list.size() > 0) {
-			for (int i = 0; i < list.size(); i++) {
-				Major ml = list.get(i);
-	%>
-
-
-	<form name="example1"
-		action="college_do.jsp?action=delmajor&cname=<%=coll.getCollege_name()%>&mname=<%=ml.getMajor_name()%>"
-		method="post">
-		<table class="table table-condensed">
-
-			<tr>
-				<td><%=ml.getMajor_name()%><input class="btn btn-default"
-					type="submit" value="删除"></td>
-			</tr>
-		</table>
-	</form>
-
-	<%
-		}
-		}
-	%>
-
-
-	<form name="example1" action="college_do.jsp?action=addmajor&cname=<%=coll.getCollege_name()%>" method="post">
-		<table class="table table-condensed">
-			<tr>
-				<td>
-
-				<select name="mname">
-				<%MajorDAO md2 = new MajorDAO();
-				ArrayList<Major> list2 = md2.getAllMajor();
-				if (list2 != null && list2.size() > 0) {
-					for (int i = 0; i < list2.size(); i++) {
-						Major m = list2.get(i); %>						
-						<option><%=m.getMajor_name() %></option>						
-					<%}					
-					}%>	
-				</select>       <input class="btn btn-default" type="submit" value="添加"></td>
-			</tr>
-		</table>
-	</form>
-
-
-
-
-
-
-
-
-
+				<tr>
+					<td><%=ml.getMajor_name()%></td>
+					<td><input class="btn btn-default" type="submit" value="删除"></td>
+				</tr>
+				<%
+					}
+					}
+				%>
+			</table>
+		</form>
+		<form name="example1"
+			action="college_do.jsp?action=addmajor&cname=<%=coll.getCollege_name()%>"
+			method="post">
+			<table class="table table-condensed">
+				<tr>
+					<td><select name="mname">
+							<%
+								MajorDAO md2 = new MajorDAO();
+								ArrayList<Major> list2 = md2.getAllMajor();
+								if (list2 != null && list2.size() > 0) {
+									for (int i = 0; i < list2.size(); i++) {
+										Major m = list2.get(i);
+							%>
+							<option><%=m.getMajor_name()%></option>
+							<%
+								}
+								}
+							%>
+					</select> <input class="btn btn-default" type="submit" value="添加"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
 </body>
 </html>
 

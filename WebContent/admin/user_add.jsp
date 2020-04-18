@@ -6,18 +6,19 @@ request.setCharacterEncoding("UTF-8");
 String htmlData = request.getParameter("description") != null ? request.getParameter("description") : "";
 
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd 
-
-">
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>后台</title>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script
+	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body > 
 <% String adminuser=(String)session.getAttribute("adminuser");
@@ -25,9 +26,16 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 			%>请先登录,3s后进入登录页面
 			<% response.setHeader("refresh","3,URL=login.jsp");
 		}%>
-<div >
+<div><jsp:include page="index.jsp"></jsp:include></div>				
+<div style="margin-left: 250px;" >
 		<form name="addForm" action="user_do.jsp?action=add" method="post">
 			<table class="table table-condensud"> 
+				<thead>
+					<tr>
+						<th>添加用户</th>
+					</tr>
+				</thead>
+				<tbody>
 				<tr>
 					<td>用户名</td>
 					<td><input class="form-control" style="width:400px;" type="text" name="uname" ></td>
@@ -46,7 +54,7 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 					<input class="btn btn-default"	 type="button"		onclick="javascript:window.location.href='userlist.jsp';" value="返回" />
 					</td>
 				</tr>
-
+	</tbody>
 			</table>
 
 

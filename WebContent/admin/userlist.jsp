@@ -8,11 +8,13 @@
 <head>
 <meta charset="UTF-8">
 <title>后台</title>
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script
+	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -21,11 +23,8 @@
 			%>请先登录,3s后进入登录页面
 			<% response.setHeader("refresh","3,URL=login.jsp");
 		}%>
-		<div id="index_center">
-		<div class="center">
-		<div style="margin-left: 100px ;margin-right: 100px">
-		<button class="btn btn-pwd"><a href="user_add.jsp">添加</a></button>
-		<button class="btn btn-pwd"><a href="index.jsp">返回</a></button>
+<div><jsp:include page="index.jsp"></jsp:include></div>				
+<div style="margin-left: 250px;" >
 			<table class="table table-stripud" id="store">
 				<thead>
 					<tr>
@@ -62,8 +61,7 @@
 			</table>
 
 	</div>
-	</div>
-	</div>
+
 	
 </body>
 </html>
