@@ -68,12 +68,6 @@
 							</table>
 
 
-
-
-
-
-
-
 						</td>
 						<td><%=collfullinf.getCollege_desc()%></td>
 					</tr>

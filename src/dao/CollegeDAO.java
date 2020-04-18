@@ -306,6 +306,87 @@ public class CollegeDAO {
 			}
 		}
 	}
+	
+	//为学校添加专业
+	public boolean addMajorToCollege(String cname,String mname) {
+		Connection conn = null;
+		PreparedStatement psins = null;
+		ResultSet rs = null;
+		String sqlins = "INSERT INTO relation ( rcollege_name,rmajor_name) VALUES (?,?);"; // sql语句
+		try {
+			conn = DBHelper.getConnection();
+			psins = conn.prepareStatement(sqlins);
+			psins.setString(1, cname); 
+			psins.setString(2, mname); 
+			int n1 = psins.executeUpdate();// 数据库更新操作
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			// 释放数据集对象
+			if (rs != null) {
+				try {
+					rs.close();
+					rs = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			// 释放语句对象
+			if (psins != null) {
+				try {
+					psins.close();
+					psins = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+
+		
+		}
+	}
+	//为学校删除专业
+	public boolean delMajorToCollege(String cname,String mname) {
+		Connection conn = null;
+		PreparedStatement psins = null;
+		ResultSet rs = null;
+		String sqlins = "delete from relation where rcollege_name=? and rmajor_name=?"; // sql语句
+		try {
+			conn = DBHelper.getConnection();
+			psins = conn.prepareStatement(sqlins);
+			psins.setString(1, cname); 
+			psins.setString(2, mname); 
+			int n1 = psins.executeUpdate();// 数据库更新操作
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			// 释放数据集对象
+			if (rs != null) {
+				try {
+					rs.close();
+					rs = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			// 释放语句对象
+			if (psins != null) {
+				try {
+					psins.close();
+					psins = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+
+		
+		}
+	}
+	
+	
 
 //	public static void main(String[] args) // 测试add
 //	{
@@ -332,11 +413,26 @@ public class CollegeDAO {
 //		System.out.print(isSuccess);
 //	}	
 
-	public static void main(String[] args) // 测试del
+//	public static void main(String[] args) // 测试del
+//	{
+//		
+//		CollegeDAO colldao = new CollegeDAO();
+//		boolean isSuccess = colldao.delCollege(105);
+//		System.out.print(isSuccess);
+//	}
+	
+//	public static void main(String[] args) // 测试添加专业函数
+//	{
+//		CollegeDAO c=new CollegeDAO();
+//		boolean isSuccess = c.addMajorToCollege("山东大学","建筑");
+//		System.out.print(isSuccess);
+//	}	
+	public static void main(String[] args) // 测试添加专业函数
 	{
-		
-		CollegeDAO colldao = new CollegeDAO();
-		boolean isSuccess = colldao.delCollege(105);
+		CollegeDAO c=new CollegeDAO();
+		boolean isSuccess = c.delMajorToCollege("山东大学","建筑");
 		System.out.print(isSuccess);
 	}
+	
+	
 }

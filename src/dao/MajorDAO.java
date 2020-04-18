@@ -275,7 +275,7 @@ public class MajorDAO {
 //		boolean isSuccess = ed.addMajor(e);
 //		System.out.print(isSuccess);
 //	}
-	
+//
 //	public static void main(String[] args) // 测试update
 //	{
 //	Essay e=new Essay();
@@ -286,7 +286,7 @@ public class MajorDAO {
 //	boolean isSuccess = ed.updateEssay(e);
 //	System.out.print(isSuccess);
 //	}	
-
+//
 //	public static void main(String[] args) // 测试del
 //	{
 //		
@@ -294,18 +294,18 @@ public class MajorDAO {
 //		boolean isSuccess = eDao.delMajor("环境设计");
 //		System.out.print(isSuccess);
 //	}
-	
-	public static void main(String[] args) {
-		MajorDAO md=new MajorDAO();
-		ArrayList<Major> list = md.getAllMajorByCollegeName("山东大学");
-		if (list != null && list.size() > 0) 
-		{
-			for (int i = 0; i < list.size(); i++) {
-				
-				Major ml = list.get(i);
-				System.out.println(ml.getMajor_name());
-	}
-		}
-		
-	}
+//	
+//	public static void main(String[] args) {
+//		MajorDAO md=new MajorDAO();
+//		ArrayList<Major> list = md.getAllMajorByCollegeName("山东大学");
+//		if (list != null && list.size() > 0) 
+//		{
+//			for (int i = 0; i < list.size(); i++) {
+//				
+//				Major ml = list.get(i);
+//				System.out.println(ml.getMajor_name());
+//	}
+//		}
+//		
+//	}
 }

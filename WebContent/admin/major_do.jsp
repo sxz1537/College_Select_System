@@ -12,11 +12,11 @@
 		String mname = request.getParameter("gid");
 		dao.delMajor(mname);//
 	} 
- 	else if ("upd".equals(action)) {
+ 	/* else if ("upd".equals(action)) {
 		String name=request.getParameter("mname");
 		m.setMajor_name(name);
 		dao.updateMajor(m);
-	}  
+	}   */
 	else if ("add".equals(action)){
 		String mname=request.getParameter("mname");
 		m.setMajor_name(mname);

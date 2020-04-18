@@ -37,5 +37,15 @@
 		dao.addCollege(coll);
 		
 	}
+	else if ("addmajor".equals(action)){
+		String cname=request.getParameter("cname");
+		String mname=request.getParameter("mname");
+		dao.addMajorToCollege(cname, mname);		
+	}
+	else if ("delmajor".equals(action)){
+		String cname=request.getParameter("cname");
+		String mname=request.getParameter("mname");
+		dao.delMajorToCollege(cname, mname);		
+	}
 	response.sendRedirect("collegelist.jsp");
 %>
