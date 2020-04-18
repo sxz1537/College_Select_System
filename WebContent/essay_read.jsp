@@ -20,7 +20,12 @@
 	<div id="index_top">
 		<jsp:include page="top.jsp"></jsp:include>
 	</div>
-	
+		<!-- 添加登录后才可以使用功能的限制 -->
+		<% String username=(String)session.getAttribute("loginuser");
+		if(username==null){
+			 response.sendRedirect("login_failure2.jsp");
+		}
+		%> 
 
 		<div id="index_center">
 		<div class="center">

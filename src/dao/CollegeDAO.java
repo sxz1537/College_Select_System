@@ -191,20 +191,35 @@ public class CollegeDAO {
 		}
 	}
 	
-	public Boolean updateCollege(College coll) { //更新学校函数
+	public Boolean updateCollege(College coll) { //更新学校函数 同时修改relation表中的学校名称
 		Connection conn = null;
+		PreparedStatement pssel = null;
 		PreparedStatement ps = null;
+		PreparedStatement ps2 = null;
 		ResultSet rs = null;
-		String sql = "update college set college_name=?,college_grade=?,college_location=?,college_desc=? where college_id=?;"; // sql语句
+		String sqlsel = "select college_name from college where college_id='"+coll.getCollege_id()+"'"; // sql语句
+		String sql1 = "update college set college_name=?,college_grade=?,college_location=?,college_desc=? where college_id=?;"; // sql语句
+		String sql2 = "update relation set rcollege_name=? where rcollege_name=?;"; // sql语句
 		try {
 			conn = DBHelper.getConnection();
-			ps = conn.prepareStatement(sql);
+			pssel=conn.prepareStatement(sqlsel);
+			rs=pssel.executeQuery();
+			while(rs.next())
+			{
+			conn = DBHelper.getConnection();
+			ps = conn.prepareStatement(sql1);
 			ps.setString(1, coll.getCollege_name());
 			ps.setInt(2, coll.getCollege_grade());
 			ps.setString(3, coll.getCollege_location());
 			ps.setString(4, coll.getCollege_desc());
-			ps.setInt(5, coll.getCollege_id());  //无需设置id
+			ps.setInt(5, coll.getCollege_id());  
 			int n = ps.executeUpdate();// 数据库更新操作
+			
+			ps2 = conn.prepareStatement(sql2);
+			ps2.setString(1, coll.getCollege_name());
+			ps2.setString(2, rs.getString("college_name"));
+			int n2 = ps2.executeUpdate();// 数据库更新操作
+			}
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -224,6 +239,14 @@ public class CollegeDAO {
 				try {
 					ps.close();
 					ps = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			if (ps2 != null) {
+				try {
+					ps2.close();
+					ps2 = null;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -385,7 +408,45 @@ public class CollegeDAO {
 		
 		}
 	}
-	
+	public int getCollegeIdByCollegeNane(String cname) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sqlins = "select college_id from college where college_name='"+cname+"'"; // sql语句
+		try {
+			conn = DBHelper.getConnection();
+			ps = conn.prepareStatement(sqlins);
+			rs=ps.executeQuery();
+			while(rs.next())
+			{
+				return rs.getInt("college_id");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// 释放数据集对象
+			if (rs != null) {
+				try {
+					rs.close();
+					rs = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			// 释放语句对象
+			if (ps != null) {
+				try {
+					ps.close();
+					ps = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+
+		
+		}
+		return 0;
+	}
 	
 
 //	public static void main(String[] args) // 测试add
@@ -400,18 +461,18 @@ public class CollegeDAO {
 //		System.out.print(isSuccess);
 //	}
 	
-//	public static void main(String[] args) // 测试update
-//	{
-//		College c=new College();
-//		c.setCollege_id(97);
-//		c.setCollege_name("野鸡大学666");
-//		c.setCollege_grade(565);
-//		c.setCollege_location("台湾");
-//		c.setCollege_desc("这是野鸡大学666");
-//		CollegeDAO colldao = new CollegeDAO();
-//		boolean isSuccess = colldao.updateCollege(c);
-//		System.out.print(isSuccess);
-//	}	
+	public static void main(String[] args) // 测试update
+	{
+		College c=new College();
+		c.setCollege_id(106);
+		c.setCollege_name("野鸡大学666");
+		c.setCollege_grade(565);
+		c.setCollege_location("台湾");
+		c.setCollege_desc("这是野鸡大学666");
+		CollegeDAO colldao = new CollegeDAO();
+		boolean isSuccess = colldao.updateCollege(c);
+		System.out.print(isSuccess);
+	}	
 
 //	public static void main(String[] args) // 测试del
 //	{
@@ -427,12 +488,17 @@ public class CollegeDAO {
 //		boolean isSuccess = c.addMajorToCollege("山东大学","建筑");
 //		System.out.print(isSuccess);
 //	}	
-	public static void main(String[] args) // 测试添加专业函数
-	{
-		CollegeDAO c=new CollegeDAO();
-		boolean isSuccess = c.delMajorToCollege("山东大学","建筑");
-		System.out.print(isSuccess);
-	}
-	
+//	public static void main(String[] args) // 测试添加专业函数
+//	{
+//		CollegeDAO c=new CollegeDAO();
+//		boolean isSuccess = c.delMajorToCollege("山东大学","建筑");
+//		System.out.print(isSuccess);
+//	}
+//	public static void main(String[] args) // 测试添加专业函数
+//	{
+//		CollegeDAO c=new CollegeDAO();
+//		int id = c.getCollegeIdByCollegeNane("山东大学");
+//		System.out.print(id);
+//	}
 	
 }

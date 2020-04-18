@@ -48,7 +48,7 @@
 						<td><%=collf.getCollege_grade()%></td>
 						<td><%=collf.getCollege_location()%></td>
 						<td class="btn btn-link"><a href="college_do.jsp?action=del&gid=<%=collf.getCollege_id()%>">删除</a></td>
-						<td class="btn btn-link"><a href="college_upd.jsp?action=udp&gid=<%=collf.getCollege_id()%>">修改</a></td>
+						<td class="btn btn-link"><a href="college_upd.jsp?gid=<%=collf.getCollege_id()%>">修改</a></td>
 					</tr>
 					<%
 						}

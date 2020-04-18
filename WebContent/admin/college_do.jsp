@@ -11,6 +11,7 @@
 	{
 		int gid = Integer.parseInt(request.getParameter("gid"));
 		dao.delCollege(gid);//
+		response.sendRedirect("collegelist.jsp");
 	} 
  	else if ("upd".equals(action)) {
 		String cname=request.getParameter("cname");
@@ -24,6 +25,8 @@
 		coll.setCollege_desc(cdesc);
 		coll.setCollege_id(gid);
 		dao.updateCollege(coll);
+		int id=dao.getCollegeIdByCollegeNane(cname);
+		response.sendRedirect("college_upd.jsp?gid="+id);
 	}  
 	else if ("add".equals(action)){
 		String cname=request.getParameter("cname");
@@ -35,17 +38,21 @@
 		coll.setCollege_location(clocation);
 		coll.setCollege_desc(cdesc);
 		dao.addCollege(coll);
-		
+		response.sendRedirect("collegelist.jsp");
 	}
 	else if ("addmajor".equals(action)){
 		String cname=request.getParameter("cname");
 		String mname=request.getParameter("mname");
-		dao.addMajorToCollege(cname, mname);		
+		dao.addMajorToCollege(cname, mname);
+		int id=dao.getCollegeIdByCollegeNane(cname);
+		response.sendRedirect("college_upd.jsp?gid="+id);
 	}
 	else if ("delmajor".equals(action)){
 		String cname=request.getParameter("cname");
 		String mname=request.getParameter("mname");
-		dao.delMajorToCollege(cname, mname);		
+		dao.delMajorToCollege(cname, mname);
+		int id=dao.getCollegeIdByCollegeNane(cname);
+		response.sendRedirect("college_upd.jsp?gid="+id);
 	}
-	response.sendRedirect("collegelist.jsp");
+	
 %>
