@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="entity.College"%>
-<%@ page import="dao.CollegeDAO" %>
+<%@ page import="dao.CollegeDAO"%>
+<%@ page import="entity.Major"%>
+<%@ page import="dao.MajorDAO"%>
 <%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
@@ -18,9 +20,10 @@
 		<jsp:include page="top.jsp"></jsp:include>
 	</div>
 	<div id="index_center">
-		<div class="center" style="margin-left: 200px;margin-right: 200px">
+		<div class="center" style="margin-left: 200px; margin-right: 200px">
 
-			<table id="table" class="table table-striped" style="table-layout: fixed;word-break:break-all;" >
+			<table id="table" class="table table-striped"
+				style="table-layout: fixed; word-break: break-all;">
 				<thead>
 					<tr>
 						<th>名称</th>
@@ -30,7 +33,7 @@
 						<th>详细信息</th>
 					</tr>
 				</thead>
-				
+
 				<%
 					CollegeDAO colldao = new CollegeDAO();
 					College collfullinf = colldao.getFullInfById(Integer.parseInt(request.getParameter("college_id")));
@@ -41,7 +44,37 @@
 						<td><%=collfullinf.getCollege_name()%></td>
 						<td><%=collfullinf.getCollege_grade()%></td>
 						<td><%=collfullinf.getCollege_location()%></td>
-						<td><%=collfullinf.getCollege_location()%></td>
+						<td>
+							<table class="table">
+								<%
+								
+								
+								MajorDAO md=new MajorDAO();
+								ArrayList<Major> list = md.getAllMajorByCollegeName(collfullinf.getCollege_name());
+								if (list != null && list.size() > 0) 
+								{
+									for (int i = 0; i < list.size(); i++) {									
+										Major ml = list.get(i);
+								%>
+								<tbody>
+									<tr>
+										<td><%=ml.getMajor_name() %></td>
+									</tr>	
+									<%
+									}
+									}
+									%>
+								</tbody>
+							</table>
+
+
+
+
+
+
+
+
+						</td>
 						<td><%=collfullinf.getCollege_desc()%></td>
 					</tr>
 					<%
