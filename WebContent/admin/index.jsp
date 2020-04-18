@@ -27,7 +27,7 @@
                 <li><a href="collegelist.jsp">学校管理</a></li>
                 <li><a href="essaylist.jsp">文章管理 </a></li>
                 <li><a href="userlist.jsp">用户管理</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="majorlist.jsp">专业管理</a></li>
             </ul>
         </div>
     </div>

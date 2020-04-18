@@ -236,18 +236,35 @@ public class CollegeDAO {
 	
 	public Boolean delCollege(int coll_id) { //删除学校函数
 		Connection conn = null;
-		PreparedStatement ps = null;
+		PreparedStatement pssel = null;
+		PreparedStatement ps1 = null;
+		PreparedStatement ps2 = null;
 		ResultSet rs = null;
-		String sql = "delete from college where college_id=?;"; // sql语句
+		String sqlsel = "select college_name from college where college_id=?;"; // sql语句
+		String sqldel1 = "delete from relation where rcollege_name=?;"; // sql语句		
+		String sqldel2 = "delete from college where college_id=?;"; // sql语句
+		
 		try {
 			conn = DBHelper.getConnection();
-			ps = conn.prepareStatement(sql);
-			ps.setInt(1, coll_id); 
-//			ps.setString(1, coll.getCollege_name());
-//			ps.setInt(2, coll.getCollege_grade());
-//			ps.setString(3, coll.getCollege_location());
-//			ps.setString(4, coll.getCollege_desc());
-			int n = ps.executeUpdate();// 数据库更新操作
+			
+			pssel=conn.prepareStatement(sqlsel);
+			pssel.setInt(1, coll_id); 
+			rs=pssel.executeQuery();
+			while(rs.next())
+			{
+			System.out.print(rs.getString("college_name"));
+			
+			
+			ps1 = conn.prepareStatement(sqldel1);
+			ps1.setString(1, rs.getString("college_name")); 
+			int n1 = ps1.executeUpdate();// 数据库更新操作
+			
+			ps2 = conn.prepareStatement(sqldel2);
+			ps2.setInt(1, coll_id); 
+			int n2 = ps2.executeUpdate();// 数据库更新操作
+			
+			}
+			
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -263,10 +280,26 @@ public class CollegeDAO {
 				}
 			}
 			// 释放语句对象
-			if (ps != null) {
+			if (pssel != null) {
 				try {
-					ps.close();
-					ps = null;
+					pssel.close();
+					pssel = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			if (ps1 != null) {
+				try {
+					ps1.close();
+					ps1 = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			if (ps2 != null) {
+				try {
+					ps2.close();
+					ps2 = null;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -299,11 +332,11 @@ public class CollegeDAO {
 //		System.out.print(isSuccess);
 //	}	
 
-//	public static void main(String[] args) // 测试del
-//	{
-//		
-//		CollegeDAO colldao = new CollegeDAO();
-//		boolean isSuccess = colldao.delCollege(95);
-//		System.out.print(isSuccess);
-//	}
+	public static void main(String[] args) // 测试del
+	{
+		
+		CollegeDAO colldao = new CollegeDAO();
+		boolean isSuccess = colldao.delCollege(105);
+		System.out.print(isSuccess);
+	}
 }

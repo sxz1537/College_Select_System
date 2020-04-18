@@ -10,13 +10,13 @@ import entity.College;
 import entity.Essay;
 import util.DBHelper;
 
-public class EssayDAO {
-	// 获得文章信息
-	public ArrayList<Essay> getAllEssay() {
+public class EssayDAO {	
+	
+	public ArrayList<Essay> getAllEssay() {		// 获得所有文章列表
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		ArrayList<Essay> list = new ArrayList<Essay>(); // 大学集合
+		ArrayList<Essay> list = new ArrayList<Essay>(); // 文章集合
 		try {
 			conn = DBHelper.getConnection();
 			String sql = "select * from essay;"; // sql语句
@@ -54,7 +54,7 @@ public class EssayDAO {
 			}
 		}
 	}
-	public Essay geteEssayById(int essay_id) {
+	public Essay geteEssayById(int essay_id) { //通过id获取文章，辅助更新操作
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -179,7 +179,7 @@ public class EssayDAO {
 	
 	
 	
-	public Boolean delEssay(int ea_id)  { //删除学校函数
+	public Boolean delEssay(int ea_id)  { //删除文章函数
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;

@@ -26,6 +26,7 @@
 						<th>名称</th>
 						<th>录取分数线</th>
 						<th>省份</th>
+						<th>拥有专业</th>
 						<th>详细信息</th>
 					</tr>
 				</thead>
@@ -39,6 +40,7 @@
 					<tr>
 						<td><%=collfullinf.getCollege_name()%></td>
 						<td><%=collfullinf.getCollege_grade()%></td>
+						<td><%=collfullinf.getCollege_location()%></td>
 						<td><%=collfullinf.getCollege_location()%></td>
 						<td><%=collfullinf.getCollege_desc()%></td>
 					</tr>
