@@ -11,9 +11,7 @@
 		<div class="t_menu">
 		 <div>		
 			<a href="choose_college.jsp">选学校 </a>
-			<a href="choose_major.jsp">选专业</a>
 			<a href="college_list.jsp">大学排行榜</a>
-			<a href="major_list.jsp">专业排行榜</a>	
 			<a href="essay_read.jsp">高考文章阅读</a>			
 		 </div>
 		</div>	
