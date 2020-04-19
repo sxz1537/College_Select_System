@@ -43,14 +43,15 @@
 	else if ("addmajor".equals(action)){
 		String cname=request.getParameter("cname");
 		String mname=request.getParameter("mname");
-		dao.addMajorToCollege(cname, mname);
+		int mline=Integer.parseInt(request.getParameter("mline"));
+		dao.addMajorToCollege(cname, mname,mline);
 		int id=dao.getCollegeIdByCollegeNane(cname);
 		response.sendRedirect("college_upd.jsp?gid="+id);
 	}
 	else if ("delmajor".equals(action)){
 		String cname=request.getParameter("cname");
 		String mname=request.getParameter("mname");
-		dao.delMajorToCollege(cname, mname);
+		dao.delMajorForCollege(cname, mname);
 		int id=dao.getCollegeIdByCollegeNane(cname);
 		response.sendRedirect("college_upd.jsp?gid="+id);
 	}

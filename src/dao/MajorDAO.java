@@ -52,20 +52,21 @@ public class MajorDAO {
 		}
 	}
 	
-	public ArrayList<Major> getAllMajorByCollegeName(String cname) {		// 获得所有专业列表
+	public ArrayList<Major> getAllMajorByCollegeName(String cname) {		// 获得所有专业列表和分数线
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		ArrayList<Major> list = new ArrayList<Major>(); // 专业集合
 		try {
 			conn = DBHelper.getConnection();
-			String sql = "select rmajor_name from relation where rcollege_name=?;"; // sql语句
+			String sql = "select rmajor_name,rmajor_line from relation where rcollege_name=?;"; // sql语句
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, cname);
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				Major m = new Major();
 				m.setMajor_name(rs.getString("rmajor_name"));
+				m.setMajor_line(rs.getInt("rmajor_line"));
 				list.add(m); // 把专业信息加入集合
 			}
 			return list;

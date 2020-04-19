@@ -84,7 +84,7 @@
 
 			</table>
 		</form>
-	<p>更新专业信息</p>
+<p>更新专业信息</p>
 		<%
 			MajorDAO md = new MajorDAO();
 			ArrayList<Major> list = md.getAllMajorByCollegeName(coll.getCollege_name());
@@ -92,14 +92,17 @@
 				for (int i = 0; i < list.size(); i++) {
 					Major ml = list.get(i);
 		%>
+
 		<form name="example1"
 			action="college_do.jsp?action=delmajor&cname=<%=coll.getCollege_name()%>&mname=<%=ml.getMajor_name()%>"
 			method="post">
 			<table class="table table-striped">
-
 				<tr>
 					<td><%=ml.getMajor_name()%></td>
-					<td><input class="btn btn-default" type="submit" value="删除"></td>
+
+					<td><%=ml.getMajor_line()%></td>
+
+					<td><input class="btn btn-default" type="submit" value="删除">
 				</tr>
 				<%
 					}
@@ -112,7 +115,8 @@
 			method="post">
 			<table class="table table-condensed">
 				<tr>
-					<td><select name="mname">
+					<td>
+					<select name="mname">
 							<%
 								MajorDAO md2 = new MajorDAO();
 								ArrayList<Major> list2 = md2.getAllMajor();
@@ -125,7 +129,9 @@
 								}
 								}
 							%>
-					</select> <input class="btn btn-default" type="submit" value="添加"></td>
+					</select> 
+					<input class="form-control" style="width: 100px;" type="text" name="mline" value="0">
+					<input class="btn btn-default" type="submit" value="添加"></td>
 				</tr>
 			</table>
 		</form>

@@ -42,14 +42,26 @@
                           	  </div> 
                             -->
                            
-                            <button type="submit" class="btn btn-primary" style="margin-top: 5px;">查询</button>
+                            <button type="submit" class="btn btn-primary" style="margin-top: 5px;" onclick="return checkForm()">查询</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>	
-
+	<!-- 判断输入是否为空  onclick="return checkForm()" -->
+    <script  src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function checkForm() {
+            var grade = sesectForm.grade.value;
+            if (grade == "" || grade == null) {
+                alert("请输入你的成绩");
+                sesectForm.grade.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
 
 
 

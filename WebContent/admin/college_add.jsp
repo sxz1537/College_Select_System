@@ -59,7 +59,7 @@
 
 					<tr>
 						<td></td>
-						<td><input class="btn btn-default" type="submit" value="添加">
+						<td><input class="btn btn-default" type="submit" onclick="return checkForm()" value="添加">
 							<input class="btn btn-default" type="reset" value="重置"> <input
 							class="btn btn-default" type="button"
 							onclick="javascript:window.location.href='collegelist.jsp';"
@@ -67,9 +67,40 @@
 					</tr>
 				</tbody>
 			</table>
-
-
 		</form>
+		
+		
+			<!-- 判断输入是否为空  onclick="return checkForm()" -->
+    <script  src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function checkForm() {
+            var cname = example.cname.value;
+            var cgrade = example.cgrade.value;
+            var clocation = example.clocation.value;
+            var cdesc = example.cdesc.value;
+            if (cname == "" || cname == null) {
+                alert("请输入学校名称");
+                example.cname.focus();
+                return false;
+            }
+            if (cgrade == "" || cgrade == null) {
+                alert("请输入分数线");
+                example.cgrade.focus();
+                return false;
+            }
+            if (clocation == "" || clocation == null) {
+                alert("请输入省份");
+                example.clocation.focus();
+                return false;
+            }
+            if (cdesc == "" || cdesc == null) {
+                alert("请输入学校描述");
+                example.cdesc.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
 
 </body>
 </html>

@@ -331,16 +331,17 @@ public class CollegeDAO {
 	}
 	
 	//为学校添加专业
-	public boolean addMajorToCollege(String cname,String mname) {
+	public boolean addMajorToCollege(String cname,String mname,int mline) {
 		Connection conn = null;
 		PreparedStatement psins = null;
 		ResultSet rs = null;
-		String sqlins = "INSERT INTO relation ( rcollege_name,rmajor_name) VALUES (?,?);"; // sql语句
+		String sqlins = "INSERT INTO relation ( rcollege_name,rmajor_name,rmajor_line) VALUES (?,?,?);"; // sql语句
 		try {
 			conn = DBHelper.getConnection();
 			psins = conn.prepareStatement(sqlins);
 			psins.setString(1, cname); 
 			psins.setString(2, mname); 
+			psins.setInt(3, mline); 
 			int n1 = psins.executeUpdate();// 数据库更新操作
 			return true;
 		} catch (Exception e) {
@@ -370,7 +371,7 @@ public class CollegeDAO {
 		}
 	}
 	//为学校删除专业
-	public boolean delMajorToCollege(String cname,String mname) {
+	public boolean delMajorForCollege(String cname,String mname) {
 		Connection conn = null;
 		PreparedStatement psins = null;
 		ResultSet rs = null;

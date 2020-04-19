@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="entity.College"%>
-<%@ page import="dao.CollegeDAO"%>
 <%@ page import="entity.Major"%>
+<%@ page import="dao.CollegeDAO"%>
 <%@ page import="dao.MajorDAO"%>
 <%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
@@ -25,7 +25,7 @@
 						<th>名称</th>
 						<th>录取分数线</th>
 						<th>省份</th>
-						<th>拥有专业</th>
+						<th>专业信息</th>
 						<th>详细信息</th>
 					</tr>
 				</thead>
@@ -42,9 +42,12 @@
 						<td><%=collfullinf.getCollege_location()%></td>
 						<td>
 							<table class="table">
+								<thead>
+									<tr>
+										<td>专业名称</td><td>专业分数线</td>
+									</tr>
+								</thead>
 								<%
-								
-								
 								MajorDAO md=new MajorDAO();
 								ArrayList<Major> list = md.getAllMajorByCollegeName(collfullinf.getCollege_name());
 								if (list != null && list.size() > 0) 
@@ -54,7 +57,7 @@
 								%>
 								<tbody>
 									<tr>
-										<td><%=ml.getMajor_name() %></td>
+										<td><%=ml.getMajor_name() %></td><td><%=ml.getMajor_line() %></td>
 									</tr>	
 									<%
 									}
@@ -62,7 +65,6 @@
 									%>
 								</tbody>
 							</table>
-
 
 						</td>
 						<td><%=collfullinf.getCollege_desc()%></td>

@@ -18,7 +18,7 @@
 		<% String adminuser=(String)session.getAttribute("adminuser");
 		if(adminuser==null){
 			%>请先登录,3s后进入登录页面
-			<% response.setHeader("refresh","3,URL=login.jsp");
+			<%  response.sendRedirect("login.jsp");
 		}%>
     <ul class="nav-left-container">
         <li>  
