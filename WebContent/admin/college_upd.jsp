@@ -116,7 +116,7 @@
 			<table class="table text-nowrap">
 				<tr>
 					<td>
-					<select style="width: 200px;"name="mname">
+					添加专业：<select style="width: 200px;"name="mname">
 							<%
 								MajorDAO md2 = new MajorDAO();
 								ArrayList<Major> list2 = md2.getAllMajor();
@@ -132,7 +132,7 @@
 					</select>
 					</td>
 					<td>
-						<input  class="form-control" style="width: 200px;" type="text" name="mline" value="0">
+						添加分数线<input  class="form-control" style="width: 200px;" type="text" name="mline" value="0">
 					</td>
 					<td>
 						<input class="btn btn-default" type="submit" value="添加">
@@ -148,7 +148,7 @@
 		<div class="table-responsive">
 			<table class="table text-nowrap">
 				<tr>
-					<td><select style="width: 200px;" name="mname">
+					<td>修改专业：<select style="width: 200px;" name="mname">
 							<%
 								RelationDAO rd1 = new RelationDAO();
 								ArrayList<Major> list3 = rd1.getAllMajorByCollegeName(coll.getCollege_name());
@@ -163,7 +163,7 @@
 							%>
 					</select></td>
 					<td>
-						<input class="form-control" style="width: 200px;" type="text" name="mline" value="0">
+						修改分数线：<input class="form-control" style="width: 200px;" type="text" name="mline" value="0">
 					</td>
 					<td>
 						<input class="btn btn-default" type="submit" value="修改">
