@@ -41,8 +41,7 @@
 		coll.setCollege_desc(cDao.getFullInfById(id).getCollege_desc());
 		coll.setCollege_location(cDao.getFullInfById(id).getCollege_location());
 	%>
-	<div><jsp:include page="index.jsp"></jsp:include></div>
-	<div style="margin-left: 250px;">
+	
 		<form name="example"
 			action="college_do.jsp?action=upd&gid=<%=coll.getCollege_id()%>"
 			method="post">
@@ -130,7 +129,6 @@
 				</tr>
 			</table>
 		</form>
-	</div>
 </body>
 </html>
 

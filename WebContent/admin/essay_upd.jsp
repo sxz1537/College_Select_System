@@ -36,8 +36,7 @@
 		e.setEssay_title(eDao.geteEssayById(id).getEssay_title());
 		e.setEssay_link(eDao.geteEssayById(id).getEssay_link());
 	%>
-	<div><jsp:include page="index.jsp"></jsp:include></div>
-	<div style="margin-left: 250px;">
+
 		<form name="example"
 			action="essay_do.jsp?action=upd&gid=<%=e.getEssay_id()%>"
 			method="post">
@@ -72,7 +71,7 @@
 					</tbody>
 			</table>
 		</form>
-	</div>
+
 
 </body>
 </html>

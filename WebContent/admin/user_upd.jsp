@@ -36,8 +36,7 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 		u.setPwd(uDao.geteUserByName(name).getPwd());
 
 	%>
-<div><jsp:include page="index.jsp"></jsp:include></div>				
-<div style="margin-left: 250px;" >
+
 		<form name="example" action="user_do.jsp?action=upd&gid=<%=u.getName() %>" method="post">
 			<table class="table table-condensud"> 
 				<thead>
@@ -70,7 +69,6 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 			</table>
 		</form>
 
-</div>
 </body>
 </html>
 

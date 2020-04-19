@@ -23,8 +23,6 @@
 			%>请先登录,3s后进入登录页面
 			<% response.setHeader("refresh","3,URL=login.jsp");
 		}%>
-<div><jsp:include page="index.jsp"></jsp:include></div>				
-<div style="margin-left: 250px;" >
 			<table class="table table-stripud" id="store">
 				<thead>
 					<tr>
@@ -60,7 +58,7 @@
 				</tbody>
 			</table>
 
-	</div>
+
 
 	
 </body>

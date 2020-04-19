@@ -17,11 +17,7 @@ p{
 </style>
 </head>
 <body>
-	<p>登录失败，请检查用户名密码</p>
-	<a class="btn btn-primary" href="login.jsp">点击这里重新登录</a><br><br>
-	<a class="btn btn-primary" href="register.jsp">点击这里注册账号</a><br><br>
-	<a class="btn btn-primary" href="index.jsp">点击这里回到首页</a>
-
+	<p>登录失败，请检查用户名密码后重新登录</p>
 </body>
 </html>
 

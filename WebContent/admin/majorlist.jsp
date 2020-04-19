@@ -27,8 +27,7 @@
 		response.setHeader("refresh", "3,URL=login.jsp");
 		}
 	%>
-	<div><jsp:include page="index.jsp"></jsp:include></div>
-	<div style="margin-left: 250px;">
+
 		<table class="table table-stripmd" id="store">
 			<thead>
 				<tr>
@@ -64,7 +63,7 @@
 			</tbody>
 		</table>
 
-	</div>
+
 
 
 </body>

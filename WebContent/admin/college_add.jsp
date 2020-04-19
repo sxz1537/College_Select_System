@@ -27,8 +27,7 @@
 		response.setHeader("refresh", "3,URL=login.jsp");
 		}
 	%>
-	<div><jsp:include page="index.jsp"></jsp:include></div>
-	<div style="margin-left: 250px;">
+	
 		<form name="example" action="college_do.jsp?action=add" method="post">
 			<table class="table table-condensed">
 				<thead>
@@ -72,7 +71,6 @@
 
 		</form>
 
-	</div>
 </body>
 </html>
 

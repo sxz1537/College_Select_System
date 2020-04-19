@@ -15,63 +15,48 @@
 
 </head>
 <body>
-	<div id="index_top">
-		<jsp:include page="top.jsp"></jsp:include>
-	</div>
-	<div id="index_center">
-		<div class="center">
-		
-		<div style="margin-left: 100px ;margin-right: 100px">
-			<table class="table table-striped" id="store">
-				<thead>
-					<tr>
-						<th>大学ID</th>
-						<th>名称</th>
-						<th>录取分数线</th>
-						<th>省份</th>
-					</tr>
-				</thead>
+
+	<table class="table table-striped" id="store">
+		<thead>
+			<tr>
+				<th>大学ID</th>
+				<th>名称</th>
+				<th>录取分数线</th>
+				<th>省份</th>
+			</tr>
+		</thead>
+		<%
+			CollegeDAO colldao = new CollegeDAO();
+			int grade = Integer.parseInt(request.getParameter("grade"));
+			String location = request.getParameter("location");
+			ArrayList<College> list = colldao.getCollegeByGrade(grade);
+			if (list != null && list.size() > 0) {
+				for (int i = 0; i < list.size(); i++) {
+					int k = i + 1;
+					College collf = list.get(i);
+		%>
+		<tbody>
+			<tr>
+				<td><%=k%></td>
+				<td><a
+					href="college_details.jsp?college_id=<%=collf.getCollege_id()%>"><%=collf.getCollege_name()%></a></td>
+				<td><%=collf.getCollege_grade()%></td>
+				<td><%=collf.getCollege_location()%></td>
+			</tr>
+			<%
+				}
+				} else {
+			%>
+			<p>
+				没有符合条件的结果，请重新查询<a href="choose_college.jsp">点击这里返回</a>
+			<p>
 				<%
-					CollegeDAO colldao = new CollegeDAO();
-					int grade=Integer.parseInt(request.getParameter("grade"));
-					String location=request.getParameter("location");
-					ArrayList<College> list = colldao.getCollegeByGrade(grade);
-					if (list != null && list.size() > 0) {
-						for (int i = 0; i < list.size(); i++) {
-							int k=i+1;
-							College collf = list.get(i);
+					}
 				%>
-				<tbody>
-					<tr>
-						<td><%=k%></td>
-						<td><a href="college_details.jsp?college_id=<%=collf.getCollege_id()%>"><%=collf.getCollege_name()%></a></td>
-						<td><%=collf.getCollege_grade()%></td>
-						<td><%=collf.getCollege_location()%></td>
-					</tr>
-					<%
-						}	
-					}
-					else{
-						%>
-							没有符合条件的结果，请重新查询<a href="choose_college.jsp">点击这里返回</a>
-						<% 
-					}
-					%>
-				</tbody>
-			</table>
+			
+		</tbody>
+	</table>
 
-	</div>
-
-
-
-
-
-
-		</div>
-	</div>
-	<div id="index_footer">
-		<jsp:include page="footer.jsp"></jsp:include>
-	</div>
 
 </body>
 </html>

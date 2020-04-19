@@ -16,11 +16,7 @@
 <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div id="index_top">
-		<jsp:include page="top.jsp"></jsp:include>
-	</div>
-	<div id="index_center">
-		<div class="center" style="margin-left: 200px; margin-right: 200px">
+
 
 			<table id="table" class="table table-striped"
 				style="table-layout: fixed; word-break: break-all;">
@@ -76,11 +72,8 @@
 					%>
 				</tbody>
 			</table>
-		</div>
-	</div>
-	<div id="index_footer">
-		<jsp:include page="footer.jsp"></jsp:include>
-	</div>
+
+
 
 </body>
 </html>

@@ -15,9 +15,7 @@
 
 </head>
 <body>
-	<div id="index_top">
-		<jsp:include page="top.jsp"></jsp:include>
-	</div>
+
 	<!-- 添加登录后才可以使用功能的限制 -->
 		<% String username=(String)session.getAttribute("loginuser");
 		if(username==null){
@@ -25,9 +23,7 @@
 		}
 		%> 
 
-		<div id="index_center">
-		<div class="center">
-		<div style="margin-left: 100px ;margin-right: 100px">
+
 			<table class="table table-striped" id="store">
 				<thead>
 					<tr>
@@ -63,12 +59,7 @@
 				</tbody>
 			</table>
 
-	</div>
-	</div>
-	</div>
-	<div id="index_footer">
-		<jsp:include page="footer.jsp"></jsp:include>
-	</div>
+
 
 </body>
 </html>

@@ -132,3 +132,9 @@ ol,
 p {
     box-sizing: border-box;
 }
+
+iframe {
+	overflow:none;
+}
+
+

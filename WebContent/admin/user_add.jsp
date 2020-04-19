@@ -26,8 +26,7 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 			%>请先登录,3s后进入登录页面
 			<% response.setHeader("refresh","3,URL=login.jsp");
 		}%>
-<div><jsp:include page="index.jsp"></jsp:include></div>				
-<div style="margin-left: 250px;" >
+
 		<form name="addForm" action="user_do.jsp?action=add" method="post">
 			<table class="table table-condensud"> 
 				<thead>
@@ -60,7 +59,7 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 
 		</form>
 
-	</div>
+
 	
 	<script type="text/javascript">
         function checkForm() {

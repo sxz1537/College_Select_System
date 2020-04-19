@@ -15,11 +15,8 @@
 
 </head>
 <body>
-	<div id="index_top">
-		<jsp:include page="top.jsp"></jsp:include>
-	</div>
-	<div id="index_center">
-		<div class="center">
+
+
 			<!-- 添加登录后才可以使用功能的限制 -->
 		<% String username=(String)session.getAttribute("loginuser");
 		if(username==null){
@@ -42,7 +39,8 @@
                             <!-- <div class="form-group">
                                 <label for="location" style="margin-top: 5px;">目标省份</label> <input type="text"
                                     class="form-control" name="location" placeholder="省份">
-                            </div> -->
+                          	  </div> 
+                            -->
                            
                             <button type="submit" class="btn btn-primary" style="margin-top: 5px;">查询</button>
                         </form>
@@ -54,12 +52,6 @@
 
 
 
-
-		</div>
-	</div>
-	<div id="index_footer">
-		<jsp:include page="footer.jsp"></jsp:include>
-	</div>
 
 </body>
 </html>

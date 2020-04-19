@@ -447,6 +447,49 @@ public class CollegeDAO {
 		}
 		return 0;
 	}
+	public int getCollegeNum()
+	{
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sql = "select count(*) from college"; // sql语句
+		try {
+			conn = DBHelper.getConnection();
+			ps = conn.prepareStatement(sql);
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				return rs.getInt("count(*)");
+			}	 
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		} finally {
+			// 释放数据集对象
+			if (rs != null) {
+				try {
+					rs.close();
+					rs = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			// 释放语句对象
+			if (ps != null) {
+				try {
+					ps.close();
+					ps = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}	
+		}
+		return 0;		
+	}
+	
+	
+	
+	
+	
 	
 
 //	public static void main(String[] args) // 测试add
@@ -500,5 +543,11 @@ public class CollegeDAO {
 //		int id = c.getCollegeIdByCollegeNane("山东大学");
 //		System.out.print(id);
 //	}
+	public static void main(String[] args) // 测试添加专业函数
+	{
+		CollegeDAO c=new CollegeDAO();
+		int id = c.getCollegeNum();
+		System.out.print(id);
+	}
 	
 }

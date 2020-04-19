@@ -8,14 +8,9 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/style_center.css">
+
 </head>
 <body>
-	<div id="index_top">
-	<jsp:include page="top.jsp"></jsp:include>
-	</div>
-	<div class="center">
-	<div>
 	<div class="container">
 		<div class="row" >
 			<div class="col-md-4 col-md-offset-4">
@@ -37,12 +32,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	</div>
-	</div>
-	
-	<div id="index_footer">
-	<jsp:include page="footer.jsp"></jsp:include>
 	</div>
 </body>
 <script type="text/javascript">
