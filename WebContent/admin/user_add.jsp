@@ -4,14 +4,12 @@
 <%
 request.setCharacterEncoding("UTF-8");
 String htmlData = request.getParameter("description") != null ? request.getParameter("description") : "";
-
 %>
 <!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>后台</title>
-
+<title>后台管理</title>
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -26,7 +24,6 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 			%>请先登录,3s后进入登录页面
 			<% response.setHeader("refresh","3,URL=login.jsp");
 		}%>
-
 		<form name="addForm" action="user_do.jsp?action=add" method="post">
 			<table class="table table-condensud"> 
 				<thead>
@@ -43,8 +40,6 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 					<td>用户密码</td>
 					<td><input class="form-control" style="width:400px;" type="text" name="upwd" ></td>
 				</tr>
-				
-				
 				<tr>
 					<td></td>
 					<td>
@@ -55,12 +50,7 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 				</tr>
 	</tbody>
 			</table>
-
-
 		</form>
-
-
-	
 	<script type="text/javascript">
         function checkForm() {
             var name = addForm.uname.value;
@@ -77,9 +67,5 @@ String htmlData = request.getParameter("description") != null ? request.getParam
             return true;
         }
     </script>
-	
-	
-	
 </body>
 </html>
-

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>后台</title>
+<title>后台管理</title>
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -15,7 +15,6 @@
 	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script
 	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 </head>
 <body>
 		<% String adminuser=(String)session.getAttribute("adminuser");
@@ -38,7 +37,6 @@
 				UserDAO ud = new UserDAO();
 				ArrayList<User> list = ud.getAllUser();
 				if (list != null && list.size() > 0) {
-
 					for (int i = 0; i < list.size(); i++) {
 						int k=i+1;
 						User u = list.get(i);
@@ -57,9 +55,5 @@
 					%>
 				</tbody>
 			</table>
-
-
-
-	
 </body>
 </html>

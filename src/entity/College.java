@@ -47,5 +47,4 @@ public class College {
 	public void setCollege_desc(String college_desc) {
 		this.college_desc = college_desc;
 	}
-
 }

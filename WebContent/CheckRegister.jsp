@@ -10,11 +10,10 @@
 	boolean isSuccessReg = ud.UserReg(name, pwd);
 	if(isSuccessReg)
 	{	
-		response.sendRedirect("reg_success.jsp");//重定向到登陆页面
+		response.sendRedirect("reg_success.jsp");
 	}
-		
 	else
 	{
-		response.sendRedirect("reg_failure.jsp");//重定向到登陆页面
+		response.sendRedirect("reg_failure.jsp");
 	}
 %>

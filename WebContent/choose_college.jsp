@@ -7,24 +7,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>高考志愿填报模拟系统</title>
+<title>高考志愿填报模拟</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-
 </head>
-<body>
-
-
+<body style="margin-left: 600px ;margin-top: 200px;">
 			<!-- 添加登录后才可以使用功能的限制 -->
 		<% String username=(String)session.getAttribute("loginuser");
 		if(username==null){
 			 response.sendRedirect("login_failure2.jsp");
 		}
 		%> 
-		
-		
 	<div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -41,7 +36,6 @@
                                     class="form-control" name="location" placeholder="省份">
                           	  </div> 
                             -->
-                           
                             <button type="submit" class="btn btn-primary" style="margin-top: 5px;" onclick="return checkForm()">查询</button>
                         </form>
                     </div>
@@ -62,8 +56,5 @@
             return true;
         }
     </script>
-
-
-
 </body>
 </html>

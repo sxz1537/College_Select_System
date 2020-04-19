@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>高考志愿填报模拟系统</title>
+<title>高考志愿填报模拟</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 <div class="top">
 		<div class="t_logo">
 		 <div>
-			<a href="index.jsp"><img src="${pageContext.request.contextPath}/img/logo.jpg" alt="logo"></a>
+			<a href="index.jsp"><img src="img/logo.jpg" alt="logo"></a>
 		 </div>
 		</div>
 		<div class="t_menu">
@@ -39,10 +39,15 @@
 		</div>	
 </div>
 <div class="center">
-
- 	<iframe   frameborder="0" name="center_iframe" height="100%" width="100%">  
+ 	<iframe src="welcome.jsp"  frameborder="0" name="center_iframe" height="100%" width="100%">  
     </iframe>
-
 </div>
+<div id="footer">
+ 	<p>友情链接: <a>高考网</a><a>腾讯教育</a><a>学信网</a></p>
+	<p>高考志愿模拟填报系统</p>
+</div>
+
+
+
 </body>
 </html>

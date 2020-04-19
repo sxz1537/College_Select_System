@@ -10,7 +10,7 @@ UserDAO ud=new UserDAO();
 Boolean isLogin=ud.CheckUser(name, pwd);
 if (isLogin) {
 	session.setAttribute("loginuser", name); //设置session
-	response.sendRedirect("login_success.jsp");
+	response.sendRedirect("index.jsp");
 }else{
 	response.sendRedirect("login_failure.jsp");
 }

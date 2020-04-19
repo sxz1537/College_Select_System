@@ -8,9 +8,8 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
-
-
+<body style="margin: 200px auto;">
+	<div class="container" style="margin-left: 700px;">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -30,15 +29,15 @@
                                 <label for="" style="margin-top: 5px;">重复密码</label> <input type="password"
                                     class="form-control" name="repwd" placeholder="请重复密码">
                             </div>
-                            <button type="submit" class="btn btn-primary" style="margin-top: 5px;"
+                            <button type="submit" class="btn btn-success" style="margin-top: 5px;"
                                 onclick="return checkForm()">注册</button>
+                             <button  class="btn btn-primary" style="margin-top: 5px;" ><a href="index.jsp" style="color: #FFFFFF">返回</a></button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 	<!-- 判断输入是否为空 -->
     <script  src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript">
@@ -67,5 +66,6 @@
             return true;
         }
     </script>
+    </div>
 </body>
 </html>

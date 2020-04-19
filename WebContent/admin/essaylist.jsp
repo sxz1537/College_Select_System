@@ -22,7 +22,6 @@
 			%>请先登录,3s后进入登录页面
 			<% response.setHeader("refresh","3,URL=login.jsp");
 		}%>
-
 			<table class="table table-striped" id="store">
 				<thead>
 					<tr>
@@ -38,7 +37,6 @@
 				EssayDAO ed = new EssayDAO();
 				ArrayList<Essay> list = ed.getAllEssay();
 				if (list != null && list.size() > 0) {
-
 					for (int i = 0; i < list.size(); i++) {
 						int k=i+1;
 						Essay es = list.get(i);
@@ -57,9 +55,5 @@
 					%>
 				</tbody>
 			</table>
-
-
-
-	
 </body>
 </html>

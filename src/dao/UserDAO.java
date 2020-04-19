@@ -1,14 +1,11 @@
 package dao;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-
 import entity.Essay;
 import entity.User;
 import util.DBHelper;
-
 public class UserDAO { 
 	public boolean CheckUser(String Uname,String Upwd) {  //判断登录
 		Connection conn = null;
@@ -74,7 +71,6 @@ public class UserDAO {
 				ps.executeUpdate();
 				return true;
 			}
-			
 			} catch (Exception e) {
 			e.printStackTrace();
 			return false;
@@ -98,9 +94,7 @@ public class UserDAO {
 				}
 			}
 		}
-
 	}
-	
 	public boolean delUser(String uname) {  //删除用户
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -137,9 +131,7 @@ public class UserDAO {
 				}
 			}
 		}
-
 	}
-	
 	// 获得所有用户列表
 		public ArrayList<User> getAllUser() {
 			Connection conn = null;
@@ -201,7 +193,6 @@ public class UserDAO {
 				} else {
 					return null;
 				}
-
 			} catch (Exception e) {
 				e.printStackTrace();
 				return null;
@@ -225,7 +216,6 @@ public class UserDAO {
 					}
 				}
 			}
-
 		}
 		public Boolean updateUser(User u) { //更新用户信息函数
 			Connection conn = null;
@@ -301,13 +291,11 @@ public class UserDAO {
 			}
 			return 0;		
 		}
-	
 //	public static void main(String[] args) {
 //		UserDAO u=new UserDAO();
 //		Boolean isSuccess =u.delUser("555");
 //		System.out.print(isSuccess);
 //	}
-
 //		public static void main(String[] args) // 测试update
 //		{
 //		User e=new User();
@@ -317,6 +305,4 @@ public class UserDAO {
 //		boolean isSuccess = ed.updateUser(e);
 //		System.out.print(isSuccess);
 //		}	
-		
-		
 }

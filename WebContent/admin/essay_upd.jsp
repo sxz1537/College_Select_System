@@ -36,7 +36,6 @@
 		e.setEssay_title(eDao.geteEssayById(id).getEssay_title());
 		e.setEssay_link(eDao.geteEssayById(id).getEssay_link());
 	%>
-
 		<form name="example"
 			action="essay_do.jsp?action=upd&gid=<%=e.getEssay_id()%>"
 			method="post">
@@ -57,9 +56,6 @@
 						<td><input class="form-control" style="width: 400px;"
 							type="text" name="elink" value="<%=e.getEssay_link()%>"></td>
 					</tr>
-
-
-
 					<tr>
 						<td></td>
 						<td><input class="btn btn-default" type="submit" value="修改">
@@ -71,8 +67,5 @@
 					</tbody>
 			</table>
 		</form>
-
-
 </body>
 </html>
-

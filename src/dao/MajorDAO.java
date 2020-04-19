@@ -1,15 +1,11 @@
 package dao;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-
 import entity.Major;
 import util.DBHelper;
-
 public class MajorDAO {
-	
 	public ArrayList<Major> getAllMajor() {		// 获得所有专业列表
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -51,52 +47,6 @@ public class MajorDAO {
 			}
 		}
 	}
-	
-	public ArrayList<Major> getAllMajorByCollegeName(String cname) {		// 获得所有专业列表和分数线
-		Connection conn = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		ArrayList<Major> list = new ArrayList<Major>(); // 专业集合
-		try {
-			conn = DBHelper.getConnection();
-			String sql = "select rmajor_name,rmajor_line from relation where rcollege_name=?;"; // sql语句
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, cname);
-			rs = ps.executeQuery();
-			while (rs.next()) {
-				Major m = new Major();
-				m.setMajor_name(rs.getString("rmajor_name"));
-				m.setMajor_line(rs.getInt("rmajor_line"));
-				list.add(m); // 把专业信息加入集合
-			}
-			return list;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		} finally {
-			// 释放数据集对象
-			if (rs != null) {
-				try {
-					rs.close();
-					rs = null;
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-			// 释放语句对象
-			if (ps != null) {
-				try {
-					ps.close();
-					ps = null;
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		}
-	}
-	
-	
-	
 	public Major geteMajorById(int major_id) { //通过id获取专业，辅助更新操作
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -115,7 +65,6 @@ public class MajorDAO {
 			} else {
 				return null;
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -139,10 +88,7 @@ public class MajorDAO {
 				}
 			}
 		}
-
 	}
-	
-	
 	public Boolean addMajor(Major ma) { //添加专业函数
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -178,7 +124,6 @@ public class MajorDAO {
 			}
 		}
 	}
-	
 //	public Boolean updateMajor(Major ma) { //更新专业函数
 //		Connection conn = null;
 //		PreparedStatement ps = null;
@@ -215,10 +160,6 @@ public class MajorDAO {
 //			}
 //		}
 //	}
-	
-	
-	
-	
 	public Boolean delMajor(String mname)  { //删除专业函数 需要删除2个表的记录
 		Connection conn = null;
 		PreparedStatement ps1 = null;
@@ -305,7 +246,6 @@ public class MajorDAO {
 		}
 		return 0;		
 	}
-	
 //	public static void main(String[] args) // 测试add
 //	{
 //		Major e=new Major();

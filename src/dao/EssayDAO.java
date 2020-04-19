@@ -1,17 +1,13 @@
 package dao;
 //文章阅读业务逻辑类
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-
 import entity.College;
 import entity.Essay;
 import util.DBHelper;
-
 public class EssayDAO {	
-	
 	public ArrayList<Essay> getAllEssay() {		// 获得所有文章列表
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -73,7 +69,6 @@ public class EssayDAO {
 			} else {
 				return null;
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -97,10 +92,7 @@ public class EssayDAO {
 				}
 			}
 		}
-
 	}
-	
-	
 	public Boolean addEssay(Essay ea) { //添加文章函数
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -137,7 +129,6 @@ public class EssayDAO {
 			}
 		}
 	}
-	
 	public Boolean updateEssay(Essay ea) { //更新文章函数
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -175,10 +166,6 @@ public class EssayDAO {
 			}
 		}
 	}
-	
-	
-	
-	
 	public Boolean delEssay(int ea_id)  { //删除文章函数
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -214,7 +201,6 @@ public class EssayDAO {
 			}
 		}
 	}
-	
 	public int getEssayeNum()
 	{
 		Connection conn = null;
@@ -253,8 +239,6 @@ public class EssayDAO {
 		}
 		return 0;		
 	}
-	
-	
 //	public static void main(String[] args) // 测试add
 //	{
 //		Essay e=new Essay();
@@ -264,7 +248,6 @@ public class EssayDAO {
 //		boolean isSuccess = ed.addEssay(e);
 //		System.out.print(isSuccess);
 //	}
-	
 //	public static void main(String[] args) // 测试update
 //	{
 //	Essay e=new Essay();
@@ -275,7 +258,6 @@ public class EssayDAO {
 //	boolean isSuccess = ed.updateEssay(e);
 //	System.out.print(isSuccess);
 //	}	
-
 //	public static void main(String[] args) // 测试del
 //	{
 //		

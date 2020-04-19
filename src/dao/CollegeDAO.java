@@ -1,16 +1,14 @@
 package dao;
-//大学业务逻辑类
 
+//大学业务逻辑类
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-
 import entity.College;
 import util.DBHelper;
 
 public class CollegeDAO {
-	
 	public ArrayList<College> getAllCollege() { // 获得所有大学信息
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -77,7 +75,6 @@ public class CollegeDAO {
 			} else {
 				return null;
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -101,7 +98,6 @@ public class CollegeDAO {
 				}
 			}
 		}
-
 	}
 
 	// 条件选取大学信息
@@ -110,7 +106,6 @@ public class CollegeDAO {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		int grade = college_grade;
-
 		ArrayList<College> list = new ArrayList<College>(); // 大学集合
 		try {
 			conn = DBHelper.getConnection();
@@ -151,7 +146,7 @@ public class CollegeDAO {
 		}
 	}
 
-	public Boolean addCollege(College coll) { //添加学校函数
+	public Boolean addCollege(College coll) { // 添加学校函数
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -190,35 +185,33 @@ public class CollegeDAO {
 			}
 		}
 	}
-	
-	public Boolean updateCollege(College coll) { //更新学校函数 同时修改relation表中的学校名称
+
+	public Boolean updateCollege(College coll) { // 更新学校函数 同时修改relation表中的学校名称
 		Connection conn = null;
 		PreparedStatement pssel = null;
 		PreparedStatement ps = null;
 		PreparedStatement ps2 = null;
 		ResultSet rs = null;
-		String sqlsel = "select college_name from college where college_id='"+coll.getCollege_id()+"'"; // sql语句
+		String sqlsel = "select college_name from college where college_id='" + coll.getCollege_id() + "'"; // sql语句
 		String sql1 = "update college set college_name=?,college_grade=?,college_location=?,college_desc=? where college_id=?;"; // sql语句
 		String sql2 = "update relation set rcollege_name=? where rcollege_name=?;"; // sql语句
 		try {
 			conn = DBHelper.getConnection();
-			pssel=conn.prepareStatement(sqlsel);
-			rs=pssel.executeQuery();
-			while(rs.next())
-			{
-			conn = DBHelper.getConnection();
-			ps = conn.prepareStatement(sql1);
-			ps.setString(1, coll.getCollege_name());
-			ps.setInt(2, coll.getCollege_grade());
-			ps.setString(3, coll.getCollege_location());
-			ps.setString(4, coll.getCollege_desc());
-			ps.setInt(5, coll.getCollege_id());  
-			int n = ps.executeUpdate();// 数据库更新操作
-			
-			ps2 = conn.prepareStatement(sql2);
-			ps2.setString(1, coll.getCollege_name());
-			ps2.setString(2, rs.getString("college_name"));
-			int n2 = ps2.executeUpdate();// 数据库更新操作
+			pssel = conn.prepareStatement(sqlsel);
+			rs = pssel.executeQuery();
+			while (rs.next()) {
+				conn = DBHelper.getConnection();
+				ps = conn.prepareStatement(sql1);
+				ps.setString(1, coll.getCollege_name());
+				ps.setInt(2, coll.getCollege_grade());
+				ps.setString(3, coll.getCollege_location());
+				ps.setString(4, coll.getCollege_desc());
+				ps.setInt(5, coll.getCollege_id());
+				int n = ps.executeUpdate();// 数据库更新操作
+				ps2 = conn.prepareStatement(sql2);
+				ps2.setString(1, coll.getCollege_name());
+				ps2.setString(2, rs.getString("college_name"));
+				int n2 = ps2.executeUpdate();// 数据库更新操作
 			}
 			return true;
 		} catch (Exception e) {
@@ -253,41 +246,30 @@ public class CollegeDAO {
 			}
 		}
 	}
-	
-	
-	
-	
-	public Boolean delCollege(int coll_id) { //删除学校函数
+
+	public Boolean delCollege(int coll_id) { // 删除学校函数
 		Connection conn = null;
 		PreparedStatement pssel = null;
 		PreparedStatement ps1 = null;
 		PreparedStatement ps2 = null;
 		ResultSet rs = null;
 		String sqlsel = "select college_name from college where college_id=?;"; // sql语句
-		String sqldel1 = "delete from relation where rcollege_name=?;"; // sql语句		
+		String sqldel1 = "delete from relation where rcollege_name=?;"; // sql语句
 		String sqldel2 = "delete from college where college_id=?;"; // sql语句
-		
 		try {
 			conn = DBHelper.getConnection();
-			
-			pssel=conn.prepareStatement(sqlsel);
-			pssel.setInt(1, coll_id); 
-			rs=pssel.executeQuery();
-			while(rs.next())
-			{
-			System.out.print(rs.getString("college_name"));
-			
-			
-			ps1 = conn.prepareStatement(sqldel1);
-			ps1.setString(1, rs.getString("college_name")); 
-			int n1 = ps1.executeUpdate();// 数据库更新操作
-			
-			ps2 = conn.prepareStatement(sqldel2);
-			ps2.setInt(1, coll_id); 
-			int n2 = ps2.executeUpdate();// 数据库更新操作
-			
+			pssel = conn.prepareStatement(sqlsel);
+			pssel.setInt(1, coll_id);
+			rs = pssel.executeQuery();
+			while (rs.next()) {
+				System.out.print(rs.getString("college_name"));
+				ps1 = conn.prepareStatement(sqldel1);
+				ps1.setString(1, rs.getString("college_name"));
+				int n1 = ps1.executeUpdate();// 数据库更新操作
+				ps2 = conn.prepareStatement(sqldel2);
+				ps2.setInt(1, coll_id);
+				int n2 = ps2.executeUpdate();// 数据库更新操作
 			}
-			
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -329,97 +311,17 @@ public class CollegeDAO {
 			}
 		}
 	}
-	
-	//为学校添加专业
-	public boolean addMajorToCollege(String cname,String mname,int mline) {
-		Connection conn = null;
-		PreparedStatement psins = null;
-		ResultSet rs = null;
-		String sqlins = "INSERT INTO relation ( rcollege_name,rmajor_name,rmajor_line) VALUES (?,?,?);"; // sql语句
-		try {
-			conn = DBHelper.getConnection();
-			psins = conn.prepareStatement(sqlins);
-			psins.setString(1, cname); 
-			psins.setString(2, mname); 
-			psins.setInt(3, mline); 
-			int n1 = psins.executeUpdate();// 数据库更新操作
-			return true;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
-		} finally {
-			// 释放数据集对象
-			if (rs != null) {
-				try {
-					rs.close();
-					rs = null;
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-			// 释放语句对象
-			if (psins != null) {
-				try {
-					psins.close();
-					psins = null;
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
 
-		
-		}
-	}
-	//为学校删除专业
-	public boolean delMajorForCollege(String cname,String mname) {
-		Connection conn = null;
-		PreparedStatement psins = null;
-		ResultSet rs = null;
-		String sqlins = "delete from relation where rcollege_name=? and rmajor_name=?"; // sql语句
-		try {
-			conn = DBHelper.getConnection();
-			psins = conn.prepareStatement(sqlins);
-			psins.setString(1, cname); 
-			psins.setString(2, mname); 
-			int n1 = psins.executeUpdate();// 数据库更新操作
-			return true;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
-		} finally {
-			// 释放数据集对象
-			if (rs != null) {
-				try {
-					rs.close();
-					rs = null;
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-			// 释放语句对象
-			if (psins != null) {
-				try {
-					psins.close();
-					psins = null;
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-
-		
-		}
-	}
 	public int getCollegeIdByCollegeNane(String cname) {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sqlins = "select college_id from college where college_name='"+cname+"'"; // sql语句
+		String sqlins = "select college_id from college where college_name='" + cname + "'"; // sql语句
 		try {
 			conn = DBHelper.getConnection();
 			ps = conn.prepareStatement(sqlins);
-			rs=ps.executeQuery();
-			while(rs.next())
-			{
+			rs = ps.executeQuery();
+			while (rs.next()) {
 				return rs.getInt("college_id");
 			}
 		} catch (Exception e) {
@@ -443,13 +345,11 @@ public class CollegeDAO {
 					e.printStackTrace();
 				}
 			}
-
-		
 		}
 		return 0;
 	}
-	public int getCollegeNum()
-	{
+
+	public int getCollegeNum() {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -457,10 +357,10 @@ public class CollegeDAO {
 		try {
 			conn = DBHelper.getConnection();
 			ps = conn.prepareStatement(sql);
-			rs=ps.executeQuery();
-			if(rs.next()) {
+			rs = ps.executeQuery();
+			if (rs.next()) {
 				return rs.getInt("count(*)");
-			}	 
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			return 0;
@@ -482,16 +382,10 @@ public class CollegeDAO {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}	
+			}
 		}
-		return 0;		
+		return 0;
 	}
-	
-	
-	
-	
-	
-	
 
 //	public static void main(String[] args) // 测试add
 //	{
@@ -504,7 +398,6 @@ public class CollegeDAO {
 //		boolean isSuccess = colldao.addCollege(c);
 //		System.out.print(isSuccess);
 //	}
-	
 //	public static void main(String[] args) // 测试update
 //	{
 //		College c=new College();
@@ -517,7 +410,6 @@ public class CollegeDAO {
 //		boolean isSuccess = colldao.updateCollege(c);
 //		System.out.print(isSuccess);
 //	}	
-
 //	public static void main(String[] args) // 测试del
 //	{
 //		
@@ -525,7 +417,6 @@ public class CollegeDAO {
 //		boolean isSuccess = colldao.delCollege(105);
 //		System.out.print(isSuccess);
 //	}
-	
 //	public static void main(String[] args) // 测试添加专业函数
 //	{
 //		CollegeDAO c=new CollegeDAO();
@@ -546,9 +437,8 @@ public class CollegeDAO {
 //	}
 	public static void main(String[] args) // 测试添加专业函数
 	{
-		CollegeDAO c=new CollegeDAO();
+		CollegeDAO c = new CollegeDAO();
 		int id = c.getCollegeNum();
 		System.out.print(id);
 	}
-	
 }

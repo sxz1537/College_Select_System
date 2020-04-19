@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zh">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,6 @@
     <link rel="stylesheet" href="./css/jquery-kq-nav-left.css">
     <script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 </head>
-
 <body style="height: 100%">
 		<% String adminuser=(String)session.getAttribute("adminuser");
 		if(adminuser==null){
@@ -52,7 +50,6 @@
                 <span>大学管理</span>
                 <span class="glyphicon glyphicon-menu-right f12 fr" aria-hidden="true"></span>
             </a>
-
             <ul class="nav-left-container-small">
                 <li>
                     <a class="J_menuItem" href="collegelist.jsp" target="rigrt_iframe">大学列表</a>
@@ -108,7 +105,7 @@
             </ul>
         </li>
     </ul>
-    <div style="margin-left: 300px; margin-top:30px;height: 800px">
+    <div style="margin-left: 300px; margin-right:200px; margin-top:30px;height: 800px">
     <iframe  frameborder="0" name="rigrt_iframe"  height="100%" width="100%" src="infcount.jsp">  
     </iframe>
     </div>
@@ -116,11 +113,9 @@
         $('.nav-left-container').on('click', 'li', function () {
             $(this).find('.glyphicon-menu-right').removeClass('glyphicon-menu-right').addClass('glyphicon-menu-down');
             $(this).addClass('active').children('.nav-left-container-small').slideDown()
-
             $(this).siblings().removeClass('active').children('.nav-left-container-small').slideUp()
             $(this).siblings().find('.glyphicon-menu-down').removeClass('glyphicon-menu-down').addClass('glyphicon-menu-right ');
         })
     </script>
 </body>
-
 </html>

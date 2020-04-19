@@ -7,8 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>后台</title>
-
+<title>后台管理</title>
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -16,7 +15,6 @@
 	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script
 	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 </head>
 <body>
 	<%
@@ -27,7 +25,6 @@
 		response.setHeader("refresh", "3,URL=login.jsp");
 		}
 	%>
-
 		<table class="table table-stripmd" id="store">
 			<thead>
 				<tr>
@@ -42,7 +39,6 @@
 				MajorDAO md = new MajorDAO();
 				ArrayList<Major> list = md.getAllMajor();
 				if (list != null && list.size() > 0) {
-
 					for (int i = 0; i < list.size(); i++) {
 						int k = i + 1;
 						Major m = list.get(i);
@@ -50,7 +46,6 @@
 			<tbody>
 				<tr>
 					<td><%=k%></td>
-
 					<td><%=m.getMajor_name()%></td>
 					<td class="btn btn-pwd"><a
 						href="major_do.jsp?action=del&gid=<%=m.getMajor_name()%>">删除</a></td>
@@ -62,9 +57,5 @@
 				%>
 			</tbody>
 		</table>
-
-
-
-
 </body>
 </html>

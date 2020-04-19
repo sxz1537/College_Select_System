@@ -19,9 +19,5 @@ p{
 <body>
 	<p>登录失败，请检查用户名密码</p>
 	<a class="btn btn-primary" href="login.jsp">点击这里重新登录</a>
-
 </body>
 </html>
-
-
-

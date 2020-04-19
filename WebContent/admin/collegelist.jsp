@@ -22,8 +22,6 @@
 			%>请先登录,3s后进入登录页面
 			<% response.setHeader("refresh","3,URL=login.jsp");
 		}%>
-
-
 			<table class="table table-striped" id="store">
 				<thead>
 					<tr>
@@ -40,7 +38,6 @@
 					CollegeDAO colldao = new CollegeDAO();
 					ArrayList<College> list = colldao.getAllCollege();
 					if (list != null && list.size() > 0) {
-
 						for (int i = 0; i < list.size(); i++) {
 							int k=i+1;
 							College collf = list.get(i);
@@ -60,6 +57,5 @@
 					%>
 				</tbody>
 			</table>
-
 </body>
 </html>

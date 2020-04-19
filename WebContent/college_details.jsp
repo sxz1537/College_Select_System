@@ -1,3 +1,4 @@
+<%@page import="dao.RelationDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="entity.College"%>
@@ -9,15 +10,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>高考志愿填报模拟系统</title>
+<title>高考志愿填报模拟</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-
-
 			<table id="table" class="table table-striped"
 				style="table-layout: fixed; word-break: break-all;">
 				<thead>
@@ -29,7 +28,6 @@
 						<th>详细信息</th>
 					</tr>
 				</thead>
-
 				<%
 					CollegeDAO colldao = new CollegeDAO();
 					College collfullinf = colldao.getFullInfById(Integer.parseInt(request.getParameter("college_id")));
@@ -48,7 +46,7 @@
 									</tr>
 								</thead>
 								<%
-								MajorDAO md=new MajorDAO();
+								RelationDAO md=new RelationDAO();
 								ArrayList<Major> list = md.getAllMajorByCollegeName(collfullinf.getCollege_name());
 								if (list != null && list.size() > 0) 
 								{
@@ -65,7 +63,6 @@
 									%>
 								</tbody>
 							</table>
-
 						</td>
 						<td><%=collfullinf.getCollege_desc()%></td>
 					</tr>
@@ -74,8 +71,5 @@
 					%>
 				</tbody>
 			</table>
-
-
-
 </body>
 </html>

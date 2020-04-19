@@ -6,14 +6,12 @@
 <%
 request.setCharacterEncoding("UTF-8");
 String htmlData = request.getParameter("description") != null ? request.getParameter("description") : "";
-
 %>
 <!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>后台</title>
-
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -34,15 +32,12 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 		String name=request.getParameter("gid");
 		u.setName(uDao.geteUserByName(name).getName());
 		u.setPwd(uDao.geteUserByName(name).getPwd());
-
 	%>
-
 		<form name="example" action="user_do.jsp?action=upd&gid=<%=u.getName() %>" method="post">
 			<table class="table table-condensud"> 
 				<thead>
 					<tr>
 						<th>更新用户信息</th>
-						
 					</tr>
 				</thead>
 				<tbody>
@@ -54,9 +49,6 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 					<td>用户密码</td>
 					<td><input class="form-control" style="width:400px;" type="text" name="upwd" value="<%=u.getPwd()%>" ></td>
 				</tr>
-
-
-				
 				<tr>
 					<td></td>
 					<td>
@@ -68,7 +60,5 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 		</tbody>
 			</table>
 		</form>
-
 </body>
 </html>
-

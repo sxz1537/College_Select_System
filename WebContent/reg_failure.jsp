@@ -4,13 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>高考志愿填报模拟</title>
 </head>
 <body>
 注册失败，请更换用户名重新注册,1s后进入注册页面
 <%
 	response.setHeader("refresh","1,URL=register.jsp");
 %>
-
 </body>
 </html>

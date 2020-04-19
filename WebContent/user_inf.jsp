@@ -21,8 +21,7 @@
 		UserDAO uDao = new UserDAO();
 		String name = (String) session.getAttribute("loginuser");
 	%>
-
-	<div style="margin: 200px 200px 400px 400px;">
+	<div style="margin: 400px;">
 							<form name="example"
 								action="user_do.jsp?action=upd&gid=<%=name%>" method="post">
 								<table class="table table-condensud">
@@ -50,10 +49,5 @@
 								</table>
 							</form>
 		</div>
-
-
-
-
-
 </body>
 </html>

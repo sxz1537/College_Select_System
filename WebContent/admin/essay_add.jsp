@@ -26,7 +26,6 @@
 		response.setHeader("refresh", "3,URL=login.jsp");
 		}
 	%>
-
 		<form name="addForm" action="essay_do.jsp?action=add" method="post">
 			<table class="table table-condensed">
 				<thead>
@@ -45,8 +44,6 @@
 						<td><input class="form-control" style="width: 400px;"
 							type="text" name="elink"></td>
 					</tr>
-
-
 					<tr>
 						<td></td>
 						<td>
@@ -60,12 +57,7 @@
 					</tr>
 				</tbody>
 			</table>
-
-
 		</form>
-
-
-
 	<script type="text/javascript">
 		function checkForm() {
 			var title = addForm.etitle.value;
@@ -82,9 +74,5 @@
 			return true;
 		}
 	</script>
-
-
-
 </body>
 </html>
-

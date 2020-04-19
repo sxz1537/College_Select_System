@@ -9,7 +9,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>后台</title>
-
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -32,7 +31,6 @@
 				<thead>
 					<tr>
 						<th>添加专业</th>
-
 					</tr>
 				</thead>
 				<tbody>
@@ -41,7 +39,6 @@
 						<td><input class="form-control" style="width: 400px;"
 							type="text" name="mname"></td>
 					</tr>
-
 					<tr>
 						<td></td>
 						<td>
@@ -55,12 +52,7 @@
 					</tr>
 				</tbody>
 			</table>
-
-
 		</form>
-
-
-
 	<script type="text/javascript">
 		function checkForm() {
 			var name = addForm.mname.value;
@@ -77,9 +69,5 @@
 			return true;
 		}
 	</script>
-
-
-
 </body>
 </html>
-

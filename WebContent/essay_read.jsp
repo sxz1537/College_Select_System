@@ -9,29 +9,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>高考志愿填报模拟系统</title>
+<title>高考志愿填报模拟</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-
 </head>
 <body>
-
 		<!-- 添加登录后才可以使用功能的限制 -->
 		<% String username=(String)session.getAttribute("loginuser");
 		if(username==null){
 			 response.sendRedirect("login_failure2.jsp");
 		}
 		%> 
-
 			<table class="table table-striped" id="store">
 				<thead>
 					<tr>
 						<th>文章ID</th>
 						<th>文章标题</th>
 						<th>文章链接</th>
-						
 					</tr>
 				</thead>
 				<!-- 循环部分开始 -->
@@ -39,13 +35,10 @@
 					EssayDAO ed = new EssayDAO();
 					ArrayList<Essay> list = ed.getAllEssay();
 					if (list != null && list.size() > 0) {
-
 						for (int i = 0; i < list.size(); i++) {
 							int k=i+1;
 							Essay es = list.get(i);
 				%>
-
-
 				<tbody>
 					<tr>
 						<td><%=k%></td>
@@ -58,8 +51,5 @@
 					%>
 				</tbody>
 			</table>
-
-
-
 </body>
 </html>

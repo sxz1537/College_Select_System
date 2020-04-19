@@ -4,14 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>登录案例</title>
+<title>登录</title>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
-
 </head>
-<body>
-	<div class="container">
+<body style="margin: 200px auto;">
+	<div class="container" style="margin-left: 700px;">
 		<div class="row" >
 			<div class="col-md-4 col-md-offset-4">
 				<div class="panel panel-primary">
@@ -27,6 +26,7 @@
 							</div>
 							<button type="submit" class="btn btn-success" style="margin-top: 5px;" 
 								onclick="return checkForm()">登录</button>
+							<button  class="btn btn-primary" style="margin-top: 5px;" ><a href="index.jsp" style="color: #FFFFFF">返回</a></button>
 						</form>
 					</div>
 				</div>

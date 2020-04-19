@@ -7,15 +7,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>高考志愿填报模拟系统</title>
+<title>高考志愿填报模拟</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-
 </head>
 <body>
-
 	<table class="table table-striped" id="store">
 		<thead>
 			<tr>
@@ -53,10 +51,7 @@
 				<%
 					}
 				%>
-			
 		</tbody>
 	</table>
-
-
 </body>
 </html>

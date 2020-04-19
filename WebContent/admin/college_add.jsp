@@ -27,7 +27,6 @@
 		response.setHeader("refresh", "3,URL=login.jsp");
 		}
 	%>
-	
 		<form name="example" action="college_do.jsp?action=add" method="post">
 			<table class="table table-condensed">
 				<thead>
@@ -56,7 +55,6 @@
 						<td><input class="form-control" style="width: 400px;"
 							type="text" name="cdesc"></td>
 					</tr>
-
 					<tr>
 						<td></td>
 						<td><input class="btn btn-default" type="submit" onclick="return checkForm()" value="添加">
@@ -68,8 +66,6 @@
 				</tbody>
 			</table>
 		</form>
-		
-		
 			<!-- 判断输入是否为空  onclick="return checkForm()" -->
     <script  src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript">
@@ -101,7 +97,5 @@
             return true;
         }
     </script>
-
 </body>
 </html>
-

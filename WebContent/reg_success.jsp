@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>高考志愿填报模拟</title>
 </head>
 <body>
 注册成功,1s后进入登录页面
