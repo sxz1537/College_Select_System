@@ -30,7 +30,7 @@
 			<% 
 		}else{
 				%>
-			<a href=""><%=username %></a>
+			<a href="user_inf.jsp"><%=username %></a>
 			<a href="logout.jsp" >退出</a>
 				<% 
 			}
