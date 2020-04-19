@@ -43,7 +43,7 @@
     </iframe>
 </div>
 <div id="footer">
- 	<p>友情链接: <a>高考网</a><a>腾讯教育</a><a>学信网</a></p>
+ 	<p>友情链接: <a href="http://www.gaokao.com/">高考网 </a><a href="https://ke.qq.com/">腾讯课堂 </a><a href="https://www.chsi.com.cn/">学信网</a></p>
 	<p>高考志愿模拟填报系统</p>
 </div>
 
