@@ -30,7 +30,7 @@
 				<tr>
 					<th>序号</th>
 					<th>专业名称</th>
-					<th></th>
+					<th>操作</th>
 					<th></th>
 				</tr>
 			</thead>

@@ -42,15 +42,11 @@
 		coll.setCollege_desc(cDao.getFullInfById(id).getCollege_desc());
 		coll.setCollege_location(cDao.getFullInfById(id).getCollege_location());
 	%>
+  <p><strong>大学基本信息更新 </strong></p>
 	<form name="example"
 		action="college_do.jsp?action=upd&gid=<%=coll.getCollege_id()%>"
 		method="post">
 		<table class="table table-condensed">
-			<thead>
-				<tr>
-					<th>更新大学信息</th>
-				</tr>
-			</thead>
 			<tr>
 				<td>学校名称</td>
 				<td><input class="form-control" style="width: 400px;"
@@ -69,12 +65,12 @@
 			</tr>
 			<tr>
 				<td>学校描述</td>
-				<td><input class="form-control" style="width: 400px;"
+				<td><input class="form-control" style="width: 400px; " 
 					type="text" name="cdesc" value="<%=coll.getCollege_desc()%>"></td>
 			</tr>
 			<tr>
-				<td></td>
-				<td><input class="btn btn-default" type="submit" value="修改">
+				<td>执行操作</td>
+				<td><input class="btn btn-primary" type="submit" value="修改">
 					<input class="btn btn-default" type="reset" value="重置"> <input
 					class="btn btn-default" type="button"
 					onclick="javascript:window.location.href='collegelist.jsp';"
@@ -82,7 +78,21 @@
 			</tr>
 		</table>
 	</form>
-	<p>专业信息管理</p>
+  <p><strong>专业信息更新 </strong></p>
+	<div class="table-responsive">
+			<table class="table text-nowrap">
+				<thead>
+				<tr>
+					<td style="width: 500px;">专业名称</td>
+					<td style="width: 100px;">专业分数线</td>
+					<td>操作</td>
+				</tr>
+				</thead>
+			</table>
+		</div>
+	
+	
+	
 	<%
 		RelationDAO md = new RelationDAO();
 		ArrayList<Major> list = md.getAllMajorByCollegeName(coll.getCollege_name());
@@ -97,9 +107,9 @@
 		<div class="table-responsive">
 			<table class="table text-nowrap">
 				<tr>
-					<td style="width: 250px;"><%=ml.getMajor_name()%></td>
+					<td style="width: 500px;"><%=ml.getMajor_name()%></td>
 					<td style="width: 100px;"><%=ml.getMajor_line()%></td>
-					<td><input  class="btn btn-danger" type="submit" value="删除" >
+					<td><input  class="btn btn-danger" type="submit" value="删除" ></td>
 				</tr>
 				<%
 					}
@@ -109,14 +119,15 @@
 		</div>
 	</form>
 <!-- 	功能 添加专业 -->
+  <p><strong>添加专业 </strong></p>
 	<form name="example1"
 		action="relation_do.jsp?action=addmajor&cname=<%=coll.getCollege_name()%>"
 		method="post">
 		<div class="table-responsive">
 			<table class="table text-nowrap">
 				<tr>
-					<td>
-					添加专业：<select style="width: 200px;"name="mname">
+					<td style="width: 490px;">
+					<select class="form-control" name="mname">
 							<%
 								MajorDAO md2 = new MajorDAO();
 								ArrayList<Major> list2 = md2.getAllMajor();
@@ -131,24 +142,26 @@
 							%>
 					</select>
 					</td>
-					<td>
-						添加分数线<input  class="form-control" style="width: 200px;" type="text" name="mline" value="0">
+					<td style="width: 110px;">
+						<input  class="form-control"  type="text" name="mline" value="0">
 					</td>
 					<td>
-						<input class="btn btn-default" type="submit" value="添加">
+						<input class="btn btn-primary" type="submit" value="添加">
 					</td>
 				</tr>
 			</table>
 		</div>
 	</form>
 <!-- 	功能 修改专业分数线 -->
+  <p><strong>修改专业分数线 </strong></p>
 	<form name="example1"
 		action="relation_do.jsp?action=updmajor&cname=<%=coll.getCollege_name()%>"
 		method="post">
 		<div class="table-responsive">
 			<table class="table text-nowrap">
 				<tr>
-					<td>修改专业：<select style="width: 200px;" name="mname">
+					<td style="width: 490px;">
+					<select class="form-control" name="mname">
 							<%
 								RelationDAO rd1 = new RelationDAO();
 								ArrayList<Major> list3 = rd1.getAllMajorByCollegeName(coll.getCollege_name());
@@ -161,12 +174,13 @@
 								}
 								}
 							%>
-					</select></td>
-					<td>
-						修改分数线：<input class="form-control" style="width: 200px;" type="text" name="mline" value="0">
+					</select>
+					</td>
+					<td style="width: 110px;">
+						<input class="form-control"  type="text" name="mline" value="0">
 					</td>
 					<td>
-						<input class="btn btn-default" type="submit" value="修改">
+						<input class="btn btn-primary" type="submit" value="修改">
 					</td>
 				</tr>
 			</table>

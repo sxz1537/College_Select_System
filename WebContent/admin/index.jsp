@@ -105,8 +105,8 @@
             </ul>
         </li>
     </ul>
-    <div style="margin-left: 300px; margin-right:200px; margin-top:30px;height: 800px">
-    <iframe  frameborder="0" name="rigrt_iframe"  height="100%" width="100%" src="infcount.jsp">  
+    <div style="margin-left: 300px; margin-top:30px;height: 900px">
+    <iframe   frameborder="0" name="rigrt_iframe"  height="100%" width="100%" src="infcount.jsp">  
     </iframe>
     </div>
     <script>

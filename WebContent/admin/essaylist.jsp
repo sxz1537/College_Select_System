@@ -28,7 +28,7 @@
 						<th>文章ID</th>
 						<th>文章标题</th>
 						<th>文章链接</th>
-						<th> </th>
+						<th>操作</th>
 						<th> </th>
 					</tr>
 				</thead>

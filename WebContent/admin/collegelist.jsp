@@ -29,7 +29,7 @@
 						<th>名称</th>
 						<th>录取分数线</th>
 						<th>省份</th>
-						<th> </th>
+						<th>操作</th>
 						<th> </th>
 					</tr>
 				</thead>

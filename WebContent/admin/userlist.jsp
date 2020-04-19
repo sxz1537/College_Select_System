@@ -28,7 +28,7 @@
 						<th>序号</th>
 						<th>用户名</th>
 						<th>用户密码</th>
-						<th> </th>
+						<th>操作 </th>
 						<th> </th>
 					</tr>
 				</thead>
