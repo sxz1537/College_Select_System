@@ -97,9 +97,9 @@
 		<div class="table-responsive">
 			<table class="table text-nowrap">
 				<tr>
-					<td style="width: 200px;"><%=ml.getMajor_name()%></td>
-					<td style="width: 200px;"><%=ml.getMajor_line()%></td>
-					<td><input  class="btn btn-default" type="submit" value="删除" >
+					<td style="width: 250px;"><%=ml.getMajor_name()%></td>
+					<td style="width: 100px;"><%=ml.getMajor_line()%></td>
+					<td><input  class="btn btn-danger" type="submit" value="删除" >
 				</tr>
 				<%
 					}
@@ -148,7 +148,7 @@
 		<div class="table-responsive">
 			<table class="table text-nowrap">
 				<tr>
-					<td><select style="width: 100px;" name="mname">
+					<td><select style="width: 200px;" name="mname">
 							<%
 								RelationDAO rd1 = new RelationDAO();
 								ArrayList<Major> list3 = rd1.getAllMajorByCollegeName(coll.getCollege_name());
@@ -163,7 +163,7 @@
 							%>
 					</select></td>
 					<td>
-						<input class="form-control" style="width: 100px;" type="text" name="mline" value="0">
+						<input class="form-control" style="width: 200px;" type="text" name="mline" value="0">
 					</td>
 					<td>
 						<input class="btn btn-default" type="submit" value="修改">

@@ -46,8 +46,8 @@
 						<td><%=k%></td>
 						<td><%=u.getName()%></td>
 						<td><%=u.getPwd()%></td>
-						<td class="btn btn-pwd"><a href="user_do.jsp?action=del&gid=<%=u.getName()%>">删除</a></td>
-						<td class="btn btn-pwd"><a href="user_upd.jsp?action=udp&gid=<%=u.getName()%>">修改</a></td>
+						<td class="btn btn-danger"><a style="color: white;" href="user_do.jsp?action=del&gid=<%=u.getName()%>">删除</a></td>
+						<td class="btn btn-primary"><a style="color: white;" href="user_upd.jsp?action=udp&gid=<%=u.getName()%>">修改</a></td>
 					</tr>
 					<%
 						}

@@ -47,8 +47,7 @@
 				<tr>
 					<td><%=k%></td>
 					<td><%=m.getMajor_name()%></td>
-					<td class="btn btn-pwd"><a
-						href="major_do.jsp?action=del&gid=<%=m.getMajor_name()%>">删除</a></td>
+					<td class="btn btn-danger"><a  style="color: white;" href="major_do.jsp?action=del&gid=<%=m.getMajor_name()%>">删除</a></td>
 					<%-- 	<td class="btn btn-pwd"><a href="major_upd.jsp?action=udp&gid=<%=m.getMajor_id()%>">修改</a></td> --%>
 				</tr>
 				<%

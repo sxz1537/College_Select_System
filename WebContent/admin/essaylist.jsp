@@ -46,8 +46,8 @@
 						<td><%=k%></td>
 						<td><%=es.getEssay_title()%></td>
 						<td><a href="<%=es.getEssay_link()%>" target="_blank">点击跳转</a></td>
-						<td class="btn btn-link"><a href="essay_do.jsp?action=del&gid=<%=es.getEssay_id()%>">删除</a></td>
-						<td class="btn btn-link"><a href="essay_upd.jsp?action=udp&gid=<%=es.getEssay_id()%>">修改</a></td>
+						<td class="btn btn-danger"><a style="color: white;" href="essay_do.jsp?action=del&gid=<%=es.getEssay_id()%>">删除</a></td>
+						<td class="btn btn-primary"><a style="color: white;" href="essay_upd.jsp?action=udp&gid=<%=es.getEssay_id()%>">修改</a></td>
 					</tr>
 					<%
 						}
