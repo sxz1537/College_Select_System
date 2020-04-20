@@ -18,66 +18,72 @@
 </head>
 <body>
 
-<div class=table-responsive">
-    <table class="table">
-				<thead>
-					<tr>
-						<th>名称</th>
-						<th>录取分数线</th>
-						<th>省份</th>
-						<th>专业信息</th>
-						<th>详细信息</th>
-					</tr>
-				</thead>
+	<div class="table-responsive">
+		<p><strong>学校基础信息</strong></p>
+		<table class="table">
+			<thead>
+				<tr>
+					<td style="width: 240px">名称</td>
+					<td style="width: 150px">录取分数线</td>
+					<td style="width: 80px">省份</td>
+					<td style="width: 180px">学校介绍</td>
+				</tr>
+			</thead>
+			<%
+				CollegeDAO colldao = new CollegeDAO();
+				College collfullinf = colldao.getFullInfById(Integer.parseInt(request.getParameter("college_id")));
+				if (collfullinf != null) {
+			%>
+			<tbody>
+				<tr>
+					<td><%=collfullinf.getCollege_name()%></td>
+					<td><%=collfullinf.getCollege_grade()%></td>
+					<td><%=collfullinf.getCollege_location()%></td>
+					<td><%=collfullinf.getCollege_desc()%></td>
+				</tr>
 				<%
-					CollegeDAO colldao = new CollegeDAO();
-					College collfullinf = colldao.getFullInfById(Integer.parseInt(request.getParameter("college_id")));
-					if (collfullinf != null) {
+					}
 				%>
-				<tbody>
-					<tr>
-						<td><%=collfullinf.getCollege_name()%></td>
-						<td><%=collfullinf.getCollege_grade()%></td>
-						<td><%=collfullinf.getCollege_location()%></td>
-						<td>
-							<table class="table text-nowrap">
-								<thead>
-									<tr>
-										<td>专业名称</td><td>专业分数线</td>
-									</tr>
-								</thead>
-								<%
-								RelationDAO md=new RelationDAO();
-								ArrayList<Major> list = md.getAllMajorByCollegeName(collfullinf.getCollege_name());
-								if (list != null && list.size() > 0) 
-								{
-									for (int i = 0; i < list.size(); i++) {									
-										Major ml = list.get(i);
-								%>
-								<tbody>
-									<tr>
-										<td><%=ml.getMajor_name() %></td><td><%=ml.getMajor_line() %></td>
-									</tr>	
-									<%
-									}
-									}
-									%>
-								</tbody>
-							</table>
-						</td>
-						
-						<td>
-						
-									<%=collfullinf.getCollege_desc()%>
-								
-						
-						</td>
-					</tr>
-					<%
-						}
-					%>
-				</tbody>
-			</table>
-			</div>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="table-responsive">
+		<p><strong>学校专业信息</strong></p>
+		<table class="table text-nowrap">
+		<thead>
+			<tr>
+				<td>专业名称</td>
+				<td>专业分数线</td>
+			</tr>
+		</thead>
+		<%
+			RelationDAO md = new RelationDAO();
+			ArrayList<Major> list = md.getAllMajorByCollegeName(collfullinf.getCollege_name());
+			if (list != null && list.size() > 0) {
+				for (int i = 0; i < list.size(); i++) {
+					Major ml = list.get(i);
+		%>
+		<tbody>
+			<tr>
+				<td><%=ml.getMajor_name()%></td>
+				<td><%=ml.getMajor_line()%></td>
+			</tr>
+			<%
+				}
+			}
+			%>
+		</tbody>
+	</table>
+	</div>
+
+
+
+
+
+
+
+
+	
 </body>
 </html>

@@ -26,7 +26,7 @@
 							</div>
 							<button type="submit" class="btn btn-success" style="margin-top: 5px;" 
 								onclick="return checkForm()">登录</button>
-							<button  class="btn btn-primary" style="margin-top: 5px;" ><a href="index.jsp" style="color: #FFFFFF">返回</a></button>
+						<a class="btn btn-primary" style="margin-top: 5px;" href="index.jsp" style="color: #FFFFFF">返回</a>
 						</form>
 					</div>
 				</div>
