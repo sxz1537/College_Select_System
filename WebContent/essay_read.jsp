@@ -27,7 +27,7 @@
 					<tr>
 						<th>文章ID</th>
 						<th>文章标题</th>
-						<th>文章链接</th>
+						
 					</tr>
 				</thead>
 				<!-- 循环部分开始 -->
@@ -42,8 +42,8 @@
 				<tbody>
 					<tr>
 						<td><%=k%></td>
-						<td><%=es.getEssay_title()%></td>
-						<td><a href="<%=es.getEssay_link()%>" target="_blank">点击跳转</a></td>
+						<td><a href="<%=es.getEssay_link()%>" target="_blank"><%=es.getEssay_title()%></a></td>
+						<td></td>
 					</tr>
 					<%
 						}

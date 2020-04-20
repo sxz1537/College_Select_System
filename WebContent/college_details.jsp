@@ -17,8 +17,9 @@
 <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-			<table id="table" class="table table-striped"
-				style="table-layout: fixed; word-break: break-all;">
+
+<div class=table-responsive">
+    <table class="table">
 				<thead>
 					<tr>
 						<th>名称</th>
@@ -39,7 +40,7 @@
 						<td><%=collfullinf.getCollege_grade()%></td>
 						<td><%=collfullinf.getCollege_location()%></td>
 						<td>
-							<table class="table">
+							<table class="table text-nowrap">
 								<thead>
 									<tr>
 										<td>专业名称</td><td>专业分数线</td>
@@ -64,12 +65,19 @@
 								</tbody>
 							</table>
 						</td>
-						<td><%=collfullinf.getCollege_desc()%></td>
+						
+						<td>
+						
+									<%=collfullinf.getCollege_desc()%>
+								
+						
+						</td>
 					</tr>
 					<%
 						}
 					%>
 				</tbody>
 			</table>
+			</div>
 </body>
 </html>
