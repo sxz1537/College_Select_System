@@ -12,8 +12,7 @@
 <meta charset="UTF-8">
 <title>后台管理</title>
 <link
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	rel="stylesheet">
+	href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <%

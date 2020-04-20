@@ -52,9 +52,9 @@ String htmlData = request.getParameter("description") != null ? request.getParam
 				<tr>
 					<td></td>
 					<td>
-					<input class="btn btn-default"	 type="submit" 		value="修改">
-					<input class="btn btn-default" 	 type="reset" 		value="重置">
-					<input class="btn btn-default"	 type="button"		onclick="javascript:window.location.href='userlist.jsp';" value="返回" />
+					<input class="btn btn-success"	 type="submit" 		value="修改">
+					<input class="btn btn-danger" 	 type="reset" 		value="重置">
+					<input class="btn btn-primary"	 type="button"		onclick="javascript:window.location.href='userlist.jsp';" value="返回" />
 					</td>
 				</tr>
 		</tbody>

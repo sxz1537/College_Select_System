@@ -9,7 +9,7 @@
     <title>后台管理</title>
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/jquery-kq-nav-left.css">
-    <script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
 </head>
 <body style="height: 100%">
 		<% String adminuser=(String)session.getAttribute("adminuser");

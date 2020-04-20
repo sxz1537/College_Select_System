@@ -70,9 +70,9 @@
 			</tr>
 			<tr>
 				<td>执行操作</td>
-				<td><input class="btn btn-primary" type="submit" value="修改">
-					<input class="btn btn-default" type="reset" value="重置"> <input
-					class="btn btn-default" type="button"
+				<td><input class="btn btn-success" type="submit" value="修改">
+					<input class="btn btn-danger" type="reset" value="重置"> <input
+					class="btn btn-primary" type="button"
 					onclick="javascript:window.location.href='collegelist.jsp';"
 					value="返回" /></td>
 			</tr>
@@ -146,7 +146,7 @@
 						<input  class="form-control"  type="text" name="mline" value="0">
 					</td>
 					<td>
-						<input class="btn btn-primary" type="submit" value="添加">
+						<input class="btn btn-success" type="submit" value="添加">
 					</td>
 				</tr>
 			</table>
@@ -180,7 +180,7 @@
 						<input class="form-control"  type="text" name="mline" value="0">
 					</td>
 					<td>
-						<input class="btn btn-primary" type="submit" value="修改">
+						<input class="btn btn-success" type="submit" value="修改">
 					</td>
 				</tr>
 			</table>
