@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>后台管理</title>
-    <link rel="stylesheet" href="http://cdn.bootstrap.com/bootstrap/css/bootstrap.3.3.4.min.css">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/jquery-kq-nav-left.css">
     <script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
