@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>用户中心</title>
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -21,32 +21,30 @@
 		UserDAO uDao = new UserDAO();
 		String name = (String) session.getAttribute("loginuser");
 	%>
-	<div style="margin: 400px;">
-							<form name="example"
-								action="user_do.jsp?action=upd&gid=<%=name%>" method="post">
-								<table class="table table-condensud">
-									<thead>
-										<tr>
-											<th>更新用户信息</th>
+	<div style="margin:300px;">
+							<form name="example" action="user_do.jsp?action=upd&gid=<%=name%>" method="post">
+
+									<table class="table table-condensud" style="width:500px; align:center ;margin-left:400px; vertical-align:middle; ">
+									<tbody  >
+										<tr >
+											<td ><strong>用户名</strong></td>
+											<td ><%=name%></td>
 										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>用户名</td>
-											<td><%=name%></td>
-										</tr>
-										<tr>
-											<td>用户密码</td>
-											<td><input class="form-control" style="width: 400px;"
-												type="text" name="upwd" value=""></td>
-										</tr>
-										<tr>
-											<td><input class="btn btn-default" type="submit" value="修改"> 
-												<input class="btn btn-default" type="reset" value="重置">
-												<a class="btn btn-default" href="user_do.jsp?action=del&gid=<%=name%>">注销</a></td>
+										<tr >
+											<td ><strong>用户密码</strong></td>
+											<td ><input class="form-control" 
+												type="password" name="upwd" value=""></td>
 										</tr>
 									</tbody>
-								</table>
+										<tr >
+											<td  align="center">
+												<input class="btn btn-success" type="submit" value="修改"> 
+												<input class="btn btn-primary" type="reset" value="重置">
+												<a class="btn btn-danger" href="user_do.jsp?action=del&gid=<%=name%>">注销</a>
+												<a class="btn btn-default" href="index.jsp">返回</a>
+												</td>
+										</tr>
+									</table>
 							</form>
 		</div>
 </body>
