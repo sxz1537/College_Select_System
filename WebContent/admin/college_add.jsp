@@ -32,6 +32,7 @@
 				<thead>
 					<tr>
 						<th>添加大学</th>
+						<th>添加后会自动跳转到更新页面进行专业设置</th>
 					</tr>
 				</thead>
 				<tbody>

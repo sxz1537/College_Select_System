@@ -40,6 +40,7 @@
 		coll.setCollege_location(clocation);
 		coll.setCollege_desc(cdesc);
 		dao.addCollege(coll);
-		response.sendRedirect("collegelist.jsp");
+		int id=dao.getCollegeIdByCollegeNane(cname);
+		response.sendRedirect("college_upd.jsp?gid="+id);
 	}
 %>
