@@ -16,7 +16,7 @@ public class CollegeDAO {
 		ArrayList<College> list = new ArrayList<College>(); // 大学集合
 		try {
 			conn = DBHelper.getConnection();
-			String sql = "select * from college;"; // sql语句
+			String sql = "select * from college order by college_grade DESC;"; // sql语句
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while (rs.next()) {
@@ -109,7 +109,7 @@ public class CollegeDAO {
 		ArrayList<College> list = new ArrayList<College>(); // 大学集合
 		try {
 			conn = DBHelper.getConnection();
-			String sql = "select * from college where college_grade <='" + grade + "'"; // sql语句
+			String sql = "select * from college where college_grade <='" + grade + "' order by college_grade desc"; // sql语句
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while (rs.next()) {
