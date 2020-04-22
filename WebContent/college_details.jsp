@@ -17,9 +17,10 @@
 <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-
 	<div class="table-responsive">
-		<p><strong>学校基础信息</strong></p>
+		<p>
+			<strong>学校基础信息</strong>
+		</p>
 		<table class="table">
 			<thead>
 				<tr>
@@ -47,43 +48,35 @@
 			</tbody>
 		</table>
 	</div>
-	
 	<div class="table-responsive">
-		<p><strong>学校专业信息</strong></p>
+		<p>
+			<strong>学校专业信息</strong>
+		</p>
 		<table class="table text-nowrap">
-		<thead>
-			<tr>
-				<td>专业名称</td>
-				<td>专业分数线</td>
-			</tr>
-		</thead>
-		<%
-			RelationDAO md = new RelationDAO();
-			ArrayList<Major> list = md.getAllMajorByCollegeName(collfullinf.getCollege_name());
-			if (list != null && list.size() > 0) {
-				for (int i = 0; i < list.size(); i++) {
-					Major ml = list.get(i);
-		%>
-		<tbody>
-			<tr>
-				<td><%=ml.getMajor_name()%></td>
-				<td><%=ml.getMajor_line()%></td>
-			</tr>
+			<thead>
+				<tr>
+					<td>专业名称</td>
+					<td>专业分数线</td>
+				</tr>
+			</thead>
 			<%
-				}
-			}
+				RelationDAO md = new RelationDAO();
+				ArrayList<Major> list = md.getAllMajorByCollegeName(collfullinf.getCollege_name());
+				if (list != null && list.size() > 0) {
+					for (int i = 0; i < list.size(); i++) {
+						Major ml = list.get(i);
 			%>
-		</tbody>
-	</table>
+			<tbody>
+				<tr>
+					<td><%=ml.getMajor_name()%></td>
+					<td><%=ml.getMajor_line()%></td>
+				</tr>
+				<%
+					}
+					}
+				%>
+			</tbody>
+		</table>
 	</div>
-
-
-
-
-
-
-
-
-	
 </body>
 </html>
