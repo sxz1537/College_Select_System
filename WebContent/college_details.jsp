@@ -42,9 +42,7 @@
 					<td><%=collfullinf.getCollege_location()%></td>
 					<td><%=collfullinf.getCollege_desc()%></td>
 				</tr>
-				<%
-					}
-				%>
+				<%}%>
 			</tbody>
 		</table>
 	</div>

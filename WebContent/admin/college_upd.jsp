@@ -89,10 +89,7 @@
 				</tr>
 				</thead>
 			</table>
-		</div>
-	
-	
-	
+		</div>	
 	<%
 		RelationDAO md = new RelationDAO();
 		ArrayList<Major> list = md.getAllMajorByCollegeName(coll.getCollege_name());

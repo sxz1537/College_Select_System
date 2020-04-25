@@ -101,7 +101,7 @@ public class CollegeDAO {
 	}
 
 	// 条件选取大学信息
-	public ArrayList<College> getCollegeByGrade(int college_grade) {
+	public ArrayList<College> getCollegeByGrade(int college_grade) { //通过分数线筛选大学
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -228,6 +228,14 @@ public class CollegeDAO {
 				}
 			}
 			// 释放语句对象
+			if (ps2 != null) {
+				try {
+					ps2.close();
+					ps2 = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 			if (ps != null) {
 				try {
 					ps.close();
@@ -236,10 +244,10 @@ public class CollegeDAO {
 					e.printStackTrace();
 				}
 			}
-			if (ps2 != null) {
+			if (pssel != null) {
 				try {
-					ps2.close();
-					ps2 = null;
+					pssel.close();
+					pssel = null;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -254,7 +262,7 @@ public class CollegeDAO {
 		PreparedStatement ps2 = null;
 		ResultSet rs = null;
 		String sqlsel = "select college_name from college where college_id=?;"; // sql语句
-		String sqldel1 = "delete from relation where rcollege_name=?;"; // sql语句
+		String sqldel1 = "delete from relation where rcollege_name=?;"; // sql语句 同步删除relation表中的记录表
 		String sqldel2 = "delete from college where college_id=?;"; // sql语句
 		try {
 			conn = DBHelper.getConnection();
