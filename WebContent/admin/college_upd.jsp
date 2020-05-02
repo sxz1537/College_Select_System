@@ -137,7 +137,6 @@
 								}
 								}
 							%>
-					</select>
 					</td>
 					<td style="width: 110px;">
 						<input  class="form-control"  type="text" name="mline" value="0">

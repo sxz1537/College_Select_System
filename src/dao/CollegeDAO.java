@@ -410,10 +410,10 @@ public class CollegeDAO {
 //	{
 //		College c=new College();
 //		c.setCollege_id(106);
-//		c.setCollege_name("野鸡大学666");
+//		c.setCollege_name("大学666");
 //		c.setCollege_grade(565);
 //		c.setCollege_location("台湾");
-//		c.setCollege_desc("这是野鸡大学666");
+//		c.setCollege_desc("这是大学666");
 //		CollegeDAO colldao = new CollegeDAO();
 //		boolean isSuccess = colldao.updateCollege(c);
 //		System.out.print(isSuccess);
