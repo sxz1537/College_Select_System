@@ -10,10 +10,20 @@
 	boolean isSuccessReg = ud.UserReg(name, pwd);
 	if(isSuccessReg)
 	{	
-		response.sendRedirect("reg_success.jsp");
+		%>
+		<script>
+		if (confirm("注册成功")) {}
+		location.replace("login.jsp");
+		</script>
+		<%
 	}
 	else
 	{
-		response.sendRedirect("reg_failure.jsp");
+		%>
+		<script>
+		if (confirm("注册失败，请更换用户名后重新注册！")) {}
+		location.replace("register.jsp");
+		</script>
+		<%
 	}
 %>

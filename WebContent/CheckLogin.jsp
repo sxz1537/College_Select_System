@@ -12,6 +12,11 @@ if (isLogin) {
 	session.setAttribute("loginuser", name); //设置session
 	response.sendRedirect("index.jsp");
 }else{
-	response.sendRedirect("login_failure.jsp");
+	%>
+	<script>
+	if (confirm("登录失败，请重试！")) {}
+	location.replace("login.jsp");
+	</script>
+	<%
 }
 %>
