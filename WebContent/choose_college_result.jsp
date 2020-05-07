@@ -12,8 +12,14 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/Search.js"></script>
 </head>
 <body>
+	<strong>输入省份进行筛选</strong>
+	<div style="width: 300px" class="input-group">
+		<input class="form-control" name="key" type="text" id="key"
+			onkeydown="onSearch2(this)" value="" />
+	</div>
 	<table class="table table-striped" id="store">
 		<thead>
 			<tr>
