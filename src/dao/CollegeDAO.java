@@ -395,29 +395,8 @@ public class CollegeDAO {
 		return 0;
 	}
 
-//	public static void main(String[] args) // 测试add
-//	{
-//		College c=new College();
-//		c.setCollege_name("野鸡大学");
-//		c.setCollege_grade(555);
-//		c.setCollege_location("台湾省");
-//		c.setCollege_desc("这是野鸡大学");
-//		CollegeDAO colldao = new CollegeDAO();
-//		boolean isSuccess = colldao.addCollege(c);
-//		System.out.print(isSuccess);
-//	}
-//	public static void main(String[] args) // 测试update
-//	{
-//		College c=new College();
-//		c.setCollege_id(106);
-//		c.setCollege_name("大学666");
-//		c.setCollege_grade(565);
-//		c.setCollege_location("台湾");
-//		c.setCollege_desc("这是大学666");
-//		CollegeDAO colldao = new CollegeDAO();
-//		boolean isSuccess = colldao.updateCollege(c);
-//		System.out.print(isSuccess);
-//	}	
+
+
 //	public static void main(String[] args) // 测试del
 //	{
 //		
