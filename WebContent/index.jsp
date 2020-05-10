@@ -16,8 +16,8 @@
 		</div>
 		<div class="t_menu">
 		 <div>		
-			<a href="choose_college.jsp" target="center_iframe">选学校 </a>
-			<a href="college_list.jsp" target="center_iframe">大学排行榜</a>
+			<a href="College/choose_college.jsp" target="center_iframe">选学校 </a>
+			<a href="College/college_list.jsp" target="center_iframe">大学排行榜</a>
 			<a href="essay_read.jsp" target="center_iframe">高考文章阅读</a>			
 		 </div>
 		</div>	
@@ -25,13 +25,13 @@
 		 <div>
 			<% String username=(String)session.getAttribute("loginuser");
 		if(username==null){
-			%><a href="login.jsp" >登录</a>
-			<a href="register.jsp" >注册</a>
+			%><a href="User/login.jsp" >登录</a>
+			<a href="User/register.jsp" >注册</a>
 			<% 
 		}else{
 				%>
-			<a href="user_inf.jsp"><%=username %></a>
-			<a href="logout.jsp" >退出</a>
+			<a href="User/user_inf.jsp"><%=username %></a>
+			<a href="User/logout.jsp" >退出</a>
 				<% 
 			}
   			  %>
@@ -43,7 +43,7 @@
     </iframe>
 </div>
 <div id="footer">
- 	<p>友情链接: <a href="http://www.gaokao.com/">高考网 </a><a href="https://ke.qq.com/">腾讯课堂 </a><a href="https://www.chsi.com.cn/">学信网 </a><a href="https://github.com/sxz799/College_Select_System">联系我</a></p>
+ 	<p>友情链接: <a href="http://www.gaokao.com/" target="_blank">高考网 </a><a href="https://ke.qq.com/" target="_blank">腾讯课堂 </a><a href="https://www.chsi.com.cn/" target="_blank">学信网 </a><a href="https://github.com/sxz799/College_Select_System" target="_blank">联系我</a></p>
 	<p>高考志愿模拟填报系统</p>
 </div>
 </body>

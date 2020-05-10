@@ -12,7 +12,6 @@ public class DBHelper
 	private static final String password = "123456";
 	private static Connection conn=null; 
 		
-	
 	//静态代码块，负责加载驱动
 	static {
 		try {
