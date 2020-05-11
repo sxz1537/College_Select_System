@@ -14,6 +14,6 @@ img {
 </style>
 </head>
 <body>
-	<img alt="" src="img/bg.jpg">
+	<img alt="" src="static/img/bg.jpg">
 </body>
 </html>

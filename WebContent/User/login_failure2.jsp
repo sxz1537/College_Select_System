@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>登录失败</title>
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
 <style type="text/css">
 body {
 	align-content: center;

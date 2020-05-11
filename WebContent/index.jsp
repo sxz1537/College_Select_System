@@ -5,13 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>高考志愿填报模拟</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="static/css/style.css">
 </head>
 <body>
 <div class="top">
 		<div class="t_logo">
 		 <div>
-			<a href="index.jsp"><img src="img/logo.jpg" alt="logo"></a>
+			<a href="index.jsp"><img src="static/img/logo.jpg" alt="logo"></a>
 		 </div>
 		</div>
 		<div class="t_menu">

@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>登录</title>
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../css/style.css">
+<script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../static/css/style.css">
 </head>
 <body style="margin: 200px auto;">
 	<div class="container" style="margin-left: 700px;">

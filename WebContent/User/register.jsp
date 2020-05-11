@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>注册</title>
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../static/css/style.css">
 </head>
 <body style="margin: 200px auto;">
 	<div class="container" style="margin-left: 700px;">
