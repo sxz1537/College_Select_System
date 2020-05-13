@@ -19,7 +19,7 @@ public class RelationDAO {
 			psins.setString(1, cname); 
 			psins.setString(2, mname); 
 			psins.setInt(3, mline); 
-			int n1 = psins.executeUpdate();// 数据库更新操作
+			psins.executeUpdate();// 数据库更新操作
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -46,7 +46,7 @@ public class RelationDAO {
 		}
 	}
 	//为学校更新专业分数线
-		public boolean updMajorforCollege(String cname,String mname,int mline) {
+		public boolean updMajorforCollege(String cname,String mname,int mline) { //给学校更新专业分数线信息
 			Connection conn = null;
 			PreparedStatement psins = null;
 			ResultSet rs = null;
@@ -120,11 +120,12 @@ public class RelationDAO {
 				}
 			}
 		}
-		public ArrayList<Major> getAllMajorByCollegeName(String cname) {		// 获得所有专业列表和分数线
+
+	public ArrayList<Major> getAllMajorByCollegeName(String cname) {		// 通过学习名称获取专业列表
 			Connection conn = null;
 			PreparedStatement ps = null;
 			ResultSet rs = null;
-			ArrayList<Major> list = new ArrayList<Major>(); // 专业集合
+			ArrayList<Major> list = new ArrayList<Major>(); // 创建专业list
 			try {
 				conn = DBHelper.getConnection();
 				String sql = "select rmajor_name,rmajor_line from relation where rcollege_name=?;"; // sql语句

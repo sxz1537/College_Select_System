@@ -171,10 +171,10 @@ public class MajorDAO {
 			conn = DBHelper.getConnection();
 			ps1 = conn.prepareStatement(sql1);
 			ps1.setString(1, mname); 
-			int n1 = ps1.executeUpdate();// 数据库更新操作
+			ps1.executeUpdate();// 数据库更新操作
 			ps2 = conn.prepareStatement(sql2);
 			ps2.setString(1, mname); 
-			int n2 = ps2.executeUpdate();// 数据库更新操作
+			ps2.executeUpdate();// 数据库更新操作
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();

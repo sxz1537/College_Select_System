@@ -6,22 +6,30 @@
 <%@ page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.util.*"%>
-<%
-	request.setCharacterEncoding("UTF-8");
-	String htmlData = request.getParameter("description") != null ? request.getParameter("description") : "";
-%>
+
 <!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>后台管理</title>
-<link
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	rel="stylesheet">
-<script
-	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-<script
-	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-select.js"></script>  
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-select.css">  
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="js/bootstrap.min.js"></script>
+ 
+  
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $('.selectpicker').selectpicker({
+                'selectedText': 'cat',
+                dropupAuto: false
+            });      
+        });
+    </script>
+
 </head>
 <body>
 	<%
@@ -42,7 +50,9 @@
 		coll.setCollege_desc(cDao.getFullInfById(id).getCollege_desc());
 		coll.setCollege_location(cDao.getFullInfById(id).getCollege_location());
 	%>
-  <p><strong>大学基本信息更新 </strong></p>
+	<p>
+		<strong>大学基本信息更新 </strong>
+	</p>
 	<form name="example"
 		action="college_do.jsp?action=upd&gid=<%=coll.getCollege_id()%>"
 		method="post">
@@ -65,7 +75,7 @@
 			</tr>
 			<tr>
 				<td>学校描述</td>
-				<td><input class="form-control" style="width: 400px; " 
+				<td><input class="form-control" style="width: 400px;"
 					type="text" name="cdesc" value="<%=coll.getCollege_desc()%>"></td>
 			</tr>
 			<tr>
@@ -78,18 +88,20 @@
 			</tr>
 		</table>
 	</form>
-  <p><strong>专业信息更新 </strong></p>
+	<p>
+		<strong>专业信息更新 </strong>
+	</p>
 	<div class="table-responsive">
-			<table class="table text-nowrap">
-				<thead>
+		<table class="table text-nowrap">
+			<thead>
 				<tr>
 					<td style="width: 500px;">专业名称</td>
 					<td style="width: 100px;">专业分数线</td>
 					<td>操作</td>
 				</tr>
-				</thead>
-			</table>
-		</div>	
+			</thead>
+		</table>
+	</div>
 	<%
 		RelationDAO md = new RelationDAO();
 		ArrayList<Major> list = md.getAllMajorByCollegeName(coll.getCollege_name());
@@ -97,8 +109,8 @@
 			for (int i = 0; i < list.size(); i++) {
 				Major ml = list.get(i);
 	%>
-<!-- 	功能 删除专业 -->
-	<form name="example1"    
+	<!-- 	功能 删除专业 -->
+	<form name="example1"
 		action="relation_do.jsp?action=delmajor&cname=<%=coll.getCollege_name()%>&mname=<%=ml.getMajor_name()%>"
 		method="post">
 		<div class="table-responsive">
@@ -106,7 +118,7 @@
 				<tr>
 					<td style="width: 500px;"><%=ml.getMajor_name()%></td>
 					<td style="width: 100px;"><%=ml.getMajor_line()%></td>
-					<td><input  class="btn btn-danger" type="submit" value="删除" ></td>
+					<td><input class="btn btn-danger" type="submit" value="删除"></td>
 				</tr>
 				<%
 					}
@@ -115,49 +127,18 @@
 			</table>
 		</div>
 	</form>
-<!-- 	功能 添加专业 -->
-  <p><strong>添加专业 </strong></p>
-	<form name="example1"
-		action="relation_do.jsp?action=addmajor&cname=<%=coll.getCollege_name()%>"
-		method="post">
-		<div class="table-responsive">
-			<table class="table text-nowrap">
-				<tr>
-					<td style="width: 490px;">
-					<select class="form-control" name="mname">
-							<%
-								MajorDAO md2 = new MajorDAO();
-								ArrayList<Major> list2 = md2.getAllMajor();
-								if (list2 != null && list2.size() > 0) {
-									for (int i = 0; i < list2.size(); i++) {
-										Major m = list2.get(i);
-							%>
-							<option><%=m.getMajor_name()%></option>
-							<%
-								}
-								}
-							%>
-					</td>
-					<td style="width: 110px;">
-						<input  class="form-control"  type="text" name="mline" value="0">
-					</td>
-					<td>
-						<input class="btn btn-success" type="submit" value="添加">
-					</td>
-				</tr>
-			</table>
-		</div>
-	</form>
-<!-- 	功能 修改专业分数线 -->
-  <p><strong>修改专业分数线 </strong></p>
+	<!-- 	功能 修改专业分数线 -->
+	<p>
+		<strong>修改专业分数线 </strong>
+	</p>
 	<form name="example1"
 		action="relation_do.jsp?action=updmajor&cname=<%=coll.getCollege_name()%>"
 		method="post">
 		<div class="table-responsive">
 			<table class="table text-nowrap">
 				<tr>
-					<td style="width: 490px;">
-					<select class="form-control" name="mname">
+					<td style="width: 490px;"><select class="form-control"
+						name="mname">
 							<%
 								RelationDAO rd1 = new RelationDAO();
 								ArrayList<Major> list3 = rd1.getAllMajorByCollegeName(coll.getCollege_name());
@@ -170,17 +151,50 @@
 								}
 								}
 							%>
-					</select>
-					</td>
-					<td style="width: 110px;">
-						<input class="form-control"  type="text" name="mline" value="0">
-					</td>
-					<td>
-						<input class="btn btn-success" type="submit" value="修改">
+					</select></td>
+					<td style="width: 110px;"><input class="form-control"
+						type="text" name="mline" value="0"></td>
+					<td><input class="btn btn-success" type="submit" value="修改">
 					</td>
 				</tr>
 			</table>
 		</div>
 	</form>
+	<!-- 	功能 添加专业 -->
+	<p>
+		<strong>添加专业 </strong>
+	</p>
+	<form name="example1"
+		action="relation_do.jsp?action=addmajor&cname=<%=coll.getCollege_name()%>"
+		method="post">
+		<div class="table-responsive">
+			<table class="table text-nowrap">
+				<tr>
+					<td style="width: 490px;height: 380px">
+					  <select id="bs1Select" class="selectpicker show-tick form-control" name="mname" data-live-search="true">
+							<!-- <select class="form-control" name="mname"> -->
+							<%
+								MajorDAO md2 = new MajorDAO();
+								ArrayList<Major> list2 = md2.getAllMajor();
+								if (list2 != null && list2.size() > 0) {
+									for (int i = 0; i < list2.size(); i++) {
+										Major m = list2.get(i);
+							%>
+							<option><%=m.getMajor_name()%></option>
+							<%
+								}
+								}
+							%>
+					</select></td>
+					<td style="width: 110px;"><input class="form-control"
+						type="text" name="mline" value="0"></td>
+					<td><input class="btn btn-success" type="submit" value="添加">
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+
+
 </body>
 </html>

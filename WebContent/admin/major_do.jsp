@@ -10,7 +10,7 @@
 	if ("del".equals(action)) //是删除吗？
 	{
 		String mname = request.getParameter("gid");
-		dao.delMajor(mname);//
+		boolean isOk=dao.delMajor(mname);//
 	} 
  	/* else if ("upd".equals(action)) {
 		String name=request.getParameter("mname");
@@ -20,7 +20,7 @@
 	else if ("add".equals(action)){
 		String mname=request.getParameter("mname");
 		m.setMajor_name(mname);
-		dao.addMajor(m);
+		boolean isOk=dao.addMajor(m);
 	}
 	response.sendRedirect("majorlist.jsp");
 %>

@@ -259,7 +259,7 @@ public class UserDAO {
 		}
 	}
 
-	public int getUserNum() {
+	public int getUserNum() { //获取用户数量和
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;

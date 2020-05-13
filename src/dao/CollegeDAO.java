@@ -145,8 +145,8 @@ public class CollegeDAO {
 			}
 		}
 	}
-
-	public Boolean addCollege(College coll) { // 添加学校函数
+	// 添加学校函数
+	public Boolean addCollege(College coll) { 
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -159,7 +159,7 @@ public class CollegeDAO {
 			ps.setInt(2, coll.getCollege_grade());
 			ps.setString(3, coll.getCollege_location());
 			ps.setString(4, coll.getCollege_desc());
-			int n = ps.executeUpdate();// 数据库更新操作
+			ps.executeUpdate();// 数据库更新操作
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -185,8 +185,8 @@ public class CollegeDAO {
 			}
 		}
 	}
-
-	public Boolean updateCollege(College coll) { // 更新学校函数 同时修改relation表中的学校名称
+	// 更新学校函数 同时修改relation表中的学校名称
+	public Boolean updateCollege(College coll) { 
 		Connection conn = null;
 		PreparedStatement pssel = null;
 		PreparedStatement ps = null;
@@ -254,8 +254,8 @@ public class CollegeDAO {
 			}
 		}
 	}
-
-	public Boolean delCollege(int coll_id) { // 删除学校函数
+	// 删除学校函数
+	public Boolean delCollege(int coll_id) { 
 		Connection conn = null;
 		PreparedStatement pssel = null;
 		PreparedStatement ps1 = null;
@@ -273,10 +273,10 @@ public class CollegeDAO {
 				System.out.print(rs.getString("college_name"));
 				ps1 = conn.prepareStatement(sqldel1);
 				ps1.setString(1, rs.getString("college_name"));
-				int n1 = ps1.executeUpdate();// 数据库更新操作
+				ps1.executeUpdate();// 数据库更新操作
 				ps2 = conn.prepareStatement(sqldel2);
 				ps2.setInt(1, coll_id);
-				int n2 = ps2.executeUpdate();// 数据库更新操作
+				ps2.executeUpdate();// 数据库更新操作
 			}
 			return true;
 		} catch (Exception e) {
@@ -319,7 +319,7 @@ public class CollegeDAO {
 			}
 		}
 	}
-
+	//通过学校名称获取学校ID
 	public int getCollegeIdByCollegeNane(String cname) {
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -356,7 +356,7 @@ public class CollegeDAO {
 		}
 		return 0;
 	}
-
+	//获取学校总数
 	public int getCollegeNum() {
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -422,10 +422,10 @@ public class CollegeDAO {
 //		int id = c.getCollegeIdByCollegeNane("山东大学");
 //		System.out.print(id);
 //	}
-	public static void main(String[] args) // 测试添加专业函数
-	{
-		CollegeDAO c = new CollegeDAO();
-		int id = c.getCollegeNum();
-		System.out.print(id);
-	}
+//	public static void main(String[] args) // 测试添加专业函数
+//	{
+//		CollegeDAO c = new CollegeDAO();
+//		int id = c.getCollegeNum();
+//		System.out.print(id);
+//	}
 }

@@ -201,7 +201,7 @@ public class EssayDAO {
 			}
 		}
 	}
-	public int getEssayeNum()
+	public int getEssayeNum()	//获取文章数量
 	{
 		Connection conn = null;
 		PreparedStatement ps = null;
