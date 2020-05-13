@@ -21,7 +21,7 @@
     <script src="js/bootstrap.min.js"></script>
  
   
-    <script type="text/javascript">
+    <script type="text/javascript"> //实现添加专业的搜索框
         $(window).on('load', function () {
             $('.selectpicker').selectpicker({
                 'selectedText': 'cat',
