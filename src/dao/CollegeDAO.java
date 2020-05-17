@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import entity.College;
+import entity.Relation;
 import util.DBHelper;
 
 public class CollegeDAO {
@@ -26,6 +27,50 @@ public class CollegeDAO {
 				coll.setCollege_grade(rs.getInt("college_grade"));
 				coll.setCollege_location(rs.getString("college_location"));
 				list.add(coll); // 把大学信息加入集合
+			}
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			// 释放数据集对象
+			if (rs != null) {
+				try {
+					rs.close();
+					rs = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			// 释放语句对象
+			if (ps != null) {
+				try {
+					ps.close();
+					ps = null;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
+	public ArrayList<Relation> getCollegeByMajor(String majorname) { // 获得所有大学信息
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		ArrayList<Relation> list = new ArrayList<Relation>(); // 大学集合
+		try {
+			conn = DBHelper.getConnection();
+			String sql = "select * from relation where rmajor_name=? order by rmajor_line DESC;"; // sql语句
+			ps = conn.prepareStatement(sql);
+			ps.setString(1,majorname);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Relation r = new Relation();
+				r.setRcollege_name(rs.getString("rcollege_name"));
+				r.setRmajor_name(rs.getString("rmajor_name"));
+				r.setRmajor_line(Integer.parseInt(rs.getString("rmajor_line")));
+				list.add(r); // 把大学信息加入集合
 			}
 			return list;
 		} catch (Exception e) {
@@ -428,4 +473,18 @@ public class CollegeDAO {
 //		int id = c.getCollegeNum();
 //		System.out.print(id);
 //	}
+	public static void main(String[] args) // 测试添加专业函数
+	{
+		CollegeDAO c = new CollegeDAO();
+		ArrayList<Relation> list=c.getCollegeByMajor("网络工程");
+		for (int i = 0; i < list.size(); i++) {
+			int k = i + 1;
+			System.out.print(k);
+			Relation rf = list.get(i);
+			String cname=rf.getRcollege_name();
+			int cline=rf.getRmajor_line();
+			System.out.print(cname);
+			System.out.print(cline);
+	}
+	}
 }
